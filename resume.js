@@ -1,6 +1,13 @@
 var fs = require('fs');
 
-var song = JSON.parse( fs.readFileSync('out.json').toString() );
+
+var args = process.argv.slice();
+var inFile = args.pop();
+//var outFile = inFile.replace('.json', '.song');
+
+
+
+var song = JSON.parse( fs.readFileSync(inFile).toString() );
 
 /**
  * % object index
@@ -11,17 +18,22 @@ var song = JSON.parse( fs.readFileSync('out.json').toString() );
 var scorePartwise = song['score-partwise'];
 
 
+var multi = function(els, cb) {
+    if (els === undefined) { return; }
+    else if (!(els instanceof Array)) { els = [els]; }
+    els.forEach(cb);
+};
+
 
 // text
-scorePartwise.credit.forEach(function(credit) {
-	console.log('TEXT: ' + credit['credit-words']._);
+multi(scorePartwise.credit, function(credit) {
+    console.log('TEXT: ' + credit['credit-words']._);
 });
 
 
 
 // instruments
-var sp = scorePartwise['part-list']['score-part'];
-var parseSP = function(sp) {
+multi(scorePartwise['part-list']['score-part'], function(sp) {
 	console.log('CHANNEL:')
 	console.log('  name:    ' + sp['part-name']);
 	var mi = sp['midi-instrument'];
@@ -29,8 +41,7 @@ var parseSP = function(sp) {
 	console.log('  program: ' + mi['midi-program']);
 	console.log('  volume:  ' + mi['volume']);
 	console.log('  pan:     ' + mi['pan']);
-};
-parseSP(sp);
+});
 
 
 
@@ -62,7 +73,18 @@ measures.forEach(function(measure, mi) {
                 else if (alter === -1) { alter = 'b'; }
                 else if (alter === -2) { alter = 'bb'; }
             }
-			console.log(['  vc:', note.voice, ', dur:', note.duration, ' ', note.type, ' ', note.pitch.step, note.pitch.octave, alter].join(''));
+
+            var tie = ''; // TODO WHAT FOR?
+            if (note.tie) {
+                tie = note.tie['$'].type;
+            }
+
+            var chord = false;
+            if ('chord' in note) {
+                chord = note.chord; // play at same time as prev note
+            }
+
+			console.log(['  vc:', note.voice, ', dur:', note.duration, ' ', note.type, ' ', note.pitch.step, note.pitch.octave, alter, ' ', tie, (chord ? ' CHORD': '')].join(''));
 		}
 	});
 });
