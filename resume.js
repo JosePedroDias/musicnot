@@ -38,19 +38,31 @@ parseSP(sp);
 var measures = scorePartwise['part'].measure;
 
 measures.forEach(function(measure, mi) {
-
 	var attrs = measure.attributes;
-	console.log('MEASURE' + mi);
+	console.log('MEASURE #' + mi);
+
 	if (attrs && 'time' in attrs) {
 		console.log('  time: ' + attrs.time.beats + ' / ' + attrs.time['beat-type']);
 	}
+
+    try {
+        console.log('  tempo: ' + measure.direction.sound['$'].tempo);
+    } catch(ex) {}
 
 	measure.note.forEach(function(note, ni) {
 		if (note.rest) {
 			console.log(['  vc:', note.voice, ', dur:', note.duration, ' rest'].join(''));
 		}
 		else {
-			console.log(['  vc:', note.voice, ', dur:', note.duration, ' ', note.type, ' ', note.pitch.step, note.pitch.octave].join(''));
+            var alter = '';
+            if (note.pitch.alter) {
+                alter = parseInt(note.pitch.alter, 10);
+                if      (alter ===  1) { alter = 's'; }
+                else if (alter ===  2) { alter = 'ss'; }
+                else if (alter === -1) { alter = 'b'; }
+                else if (alter === -2) { alter = 'bb'; }
+            }
+			console.log(['  vc:', note.voice, ', dur:', note.duration, ' ', note.type, ' ', note.pitch.step, note.pitch.octave, alter].join(''));
 		}
 	});
 });
