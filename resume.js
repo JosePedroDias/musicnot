@@ -62,29 +62,31 @@ measures.forEach(function(measure, mi) {
 
 	measure.note.forEach(function(note, ni) {
 		if (note.rest) {
-			console.log(['  vc:', note.voice, ', dur:', note.duration, ' rest'].join(''));
+			console.log(['  dur:', note.duration, ' rest'].join(''));
 		}
 		else {
-            var alter = '';
+            var acci = ''; // accidental
             if (note.pitch.alter) {
-                alter = parseInt(note.pitch.alter, 10);
-                if      (alter ===  1) { alter = 's'; }
-                else if (alter ===  2) { alter = 'ss'; }
-                else if (alter === -1) { alter = 'b'; }
-                else if (alter === -2) { alter = 'bb'; }
+                acci = parseInt(note.pitch.alter, 10);
+                if      (acci ===  1) { acci = '#'; }
+                else if (acci ===  2) { acci = '##'; }
+                else if (acci === -1) { acci = 'b'; }
+                else if (acci === -2) { acci = 'bb'; }
             }
 
-            var tie = ''; // TODO WHAT FOR?
+            /*var tie = ''; // TODO WHAT FOR?
             if (note.tie) {
                 tie = note.tie['$'].type;
-            }
+            }*/
+
+            // voice irrelevant?
 
             var chord = false;
             if ('chord' in note) {
                 chord = note.chord; // play at same time as prev note
             }
 
-			console.log(['  vc:', note.voice, ', dur:', note.duration, ' ', note.type, ' ', note.pitch.step, note.pitch.octave, alter, ' ', tie, (chord ? ' CHORD': '')].join(''));
+			console.log(['  dur:', note.duration, /*' ', note.type,*/ ' ', note.pitch.step, acci, note.pitch.octave, ' ', (chord ? ' CHORD': '')].join(''));
 		}
 	});
 });

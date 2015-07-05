@@ -12,14 +12,15 @@ midi sequencer:
 
 ## Modules:
 
-(parse musicXML)
+### parse musicXML
 <https://github.com/saebekassebil/musicjson>
 
-(generate SVG on server-side via snapSVG)
+### generate SVG on server-side via snapSVG  
 <https://github.com/dodo/node-raphael/blob/master/index.js>
 
-(piano interface + web audio)
-<http://stuartmemo.com/qwerty-hancock/>
+###piano interface + web audio
+<http://stuartmemo.com/qwerty-hancock/>  
+<http://loov.github.io/jsfx/music.html> <http://loov.github.io/jsfx/jsmusic.js>
 
 
 
