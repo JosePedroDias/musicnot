@@ -9,6 +9,7 @@
     var notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
     var noteToFreq = {};
 
+    // note to frequency computation
     // based on https://gist.github.com/nerdsRob/5579875
     var computeFreq = function (note) {
         var f = noteToFreq[note];
@@ -41,6 +42,7 @@
 
 
 
+    // shared webaudio nodes
     var CTX = new AudioContext();
 
     var masterGain = CTX.createGain();
@@ -49,6 +51,9 @@
 
     var DEST = masterGain;
 
+
+
+    // regular sound wave generation from note
     var genNote = function(freq, type) {
         var osc = CTX.createOscillator();
         osc.type = type || 'square'; // sine square sawtooth triangle custom - https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/type
@@ -56,7 +61,7 @@
         osc.connect(DEST);
         osc.start(0);
 
-        return function() {
+        return function() { // to kill the generator
             osc.stop(0);
             osc.disconnect();
         };
@@ -65,7 +70,9 @@
     window.genNote = genNote;
 
 
-
+    // same as above, but using a processor implementing the Karplus-Strong algorithm (good for string synthesis)
+    // theory: https://ccrma.stanford.edu/~jos/pasp/Karplus_Strong_Algorithm.html
+    // lost the attribution for this code :\
     var genString = function(freq) {
         var pro = CTX.createScriptProcessor(512, 0, 1);
         pro.connect(DEST);
@@ -86,7 +93,7 @@
             }
         };
 
-        return function() {
+        return function() { // to kill the generator
             pro.disconnect();
         };
     };
