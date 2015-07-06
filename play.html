@@ -16,40 +16,24 @@
 
     <body>
         <script>
-
-
-
-            var ctx = new AudioContext();
-            var pluck = new Pluck(ctx);
-            //pluck.play(220);
-
-
-
-
-
             var timer, playing;
 
-            //var notes = 'C3 D3 E3 F3 G3 A3 B3 C4'.split(' ');
+            var notes = 'C3 D3 E3 F3 G3 A3 B3 C4'.split(' ');
             //var notes = 'E2 A2 D3 G3 B3 E4'.split(' '); // GUITAR
-            var notes = 'B0 E1 A1 D2 G2'.split(' '); // BASE
-            var symString = false;
+            //var notes = 'B0 E1 A1 D2 G2'.split(' '); // BASE
+            var symString = true;
 
             var onTick = function() {
                 var note = notes.shift();
 
-                if (!symString && playing) {
-                    gen.stop(playing);
+                if (playing) {
+                    playing();
+                    playing = undefined;
                 }
 
                 if (note) {
-                    playing = note;
-
-                    if (!symString) {
-                        gen.play(note);
-                    }
-                    else {
-                        pluck.play( computeFreq(note) );
-                    }
+                    var f = computeFreq(note);
+                    playing = symString ? genString(f) : genNote(f, 'square');
                 }
                 else {
                     playing = undefined;

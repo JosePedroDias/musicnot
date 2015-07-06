@@ -6,11 +6,8 @@
 
 
 
-    var noteToFreq = {};
-
-
-
     var notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+    var noteToFreq = {};
 
     // based on https://gist.github.com/nerdsRob/5579875
     var computeFreq = function (note) {
@@ -35,106 +32,65 @@
             keyNumber = keyNumber + ((octave - 1) * 12) + 1;
         }
 
-        var f = 440 * Math.pow(2, (keyNumber- 49) / 12);
+        var f = 440 * Math.pow(2, (keyNumber - 49) / 12);
         noteToFreq[note] = f;
         return f;
     };
-
-
-
-    /*
-     var scale = 'C D EF G HA B';
-
-     var computeFreq = function(note) {
-        var f = noteToFreq[note];
-        if (f) { return f; }
-        var chars = note.split('');
-
-        var i = 0;
-        var c = chars[i++];
-        var n = scale.indexOf(c) + 3;
-
-        while (1) {
-            c = chars[i++];
-            switch (c) {
-                case '#': ++n; break;
-                case 'b': --n; break;
-                default:
-                    n += parseInt(c, 10) * 12;
-            }
-            f = 220 * Math.pow(2, 1 + n/12);
-            noteToFreq[note] = f;
-            return f;
-        }
-    };*/
 
     window.computeFreq = computeFreq;
 
 
 
-    var ctx = new AudioContext();
+    var CTX = new AudioContext();
 
-    var masterGain = ctx.createGain();
+    var masterGain = CTX.createGain();
     masterGain.gain.value = 0.3;
-    masterGain.connect(ctx.destination);
+    masterGain.connect(CTX.destination);
 
-    var notesBeingPlayed = {};
+    var DEST = masterGain;
 
-    var beginPlayNote = function(note) {
-        var f = computeFreq(note);
-        console.log('play %s (%s Hz)', note, f.toFixed(2));
-        var osc = ctx.createOscillator();
-        osc.type = 'triangle'; // sine square sawtooth triangle custom - https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/type
-        osc.frequency.value = f;
-        osc.connect(masterGain);
-        notesBeingPlayed[f] = osc;
+    var genNote = function(freq, type) {
+        var osc = CTX.createOscillator();
+        osc.type = type || 'square'; // sine square sawtooth triangle custom - https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/type
+        osc.frequency.value = freq;
+        osc.connect(DEST);
         osc.start(0);
+
+        return function() {
+            osc.stop(0);
+            osc.disconnect();
+        };
     };
 
-    var endPlayNote = function(note) {
-        var f = computeFreq(note);
-        console.log('stop %s (%s Hz)', note, f.toFixed(2));
-        var osc = notesBeingPlayed[f];
-        if (!osc) { return; }
-        delete notesBeingPlayed[f];
-        osc.stop(0);
-        osc.disconnect();
-    };
-
-    window.gen = {play:beginPlayNote, stop:endPlayNote};
+    window.genNote = genNote;
 
 
 
-    // Karplus-Strong - good for string synth
-    // https://ccrma.stanford.edu/~jos/pasp/Karplus_Strong_Algorithm.html
-    function Pluck(ctx) {
-        this.sr = ctx.sampleRate;
-        this.pro = ctx.createScriptProcessor(512, 0, 1); // buffer size, number of in channels, number of out channels
-        this.pro.connect(ctx.destination);
-    }
+    var genString = function(freq) {
+        var pro = CTX.createScriptProcessor(512, 0, 1);
+        pro.connect(DEST);
 
-    Pluck.prototype.play = function (freq) {
-        var N = Math.round(this.sr / freq),
-            impulse = this.sr / 1000,
-            y = new Float32Array(N),
-            n = 0;
-        this.pro.onaudioprocess = function (e) {
+        var N = Math.round(CTX.sampleRate / freq);
+        var impulse = CTX.sampleRate / 1000;
+        var y = new Float32Array(N);
+        var n = 0;
+
+        pro.onaudioprocess = function(e) {
             var out = e.outputBuffer.getChannelData(0), i = 0, xn;
             for (; i < out.length; ++i) {
                 xn = ( --impulse >= 0 ) ? Math.random() - 0.5 : 0;
                 out[i] = y[n] = xn + ( y[n] + y[( n + 1 ) % N] ) / 2;
-                if (++n >= N || !this.playing) {
+                if (++n >= N) {
                     n = 0;
                 }
             }
-        }.bind(this);
-        this.playing = true;
+        };
+
+        return function() {
+            pro.disconnect();
+        };
     };
 
-    Pluck.prototype.pause = function () {
-        this.playing = false;
-    };
-
-    window.Pluck = Pluck;
+    window.genString = genString;
 
 })();
