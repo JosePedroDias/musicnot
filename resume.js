@@ -7,9 +7,9 @@ var outFile = inFile.replace('.json', '.song');
 
 
 
-var pi = function(n) { var v = parseInt(n, 10); return isNaN(v) ? undefined : v; };
-var pf = function(n) { var v = parseFloat(n);   return isNaN(v) ? undefined : v; };
-
+var pi = function(s) { var v = parseInt(s, 10); return isNaN(v) ? undefined : v; };
+var pf = function(s) { var v = parseFloat(s);   return isNaN(v) ? undefined : v; };
+var ps = function(s) { return typeof s === 'string' ? s : undefined; }
 
 
 var song = JSON.parse( fs.readFileSync(inFile).toString() );
@@ -50,7 +50,7 @@ multi(scorePartwise['part-list']['score-part'], function(sp) {
 	//console.log('  volume:  ' + mi['volume']);
 	//console.log('  pan:     ' + mi['pan']);
     doc.partList.push({
-        name:    sp['part-name'],
+        name:    ps(sp['part-name']),
         channel: pi(mi['midi-channel']),
         program: pi(mi['midi-program']),
         volume:  pf(mi['volume']),
@@ -76,10 +76,15 @@ multi(scorePartwise.part, function(part, pii) {
             me.time = [ pi(attrs.time.beats), pi(attrs.time['beat-type']) ];
         }
 
-        try {
-            //console.log('  tempo: ' + measure.direction.sound['$'].tempo);
-            me.tempo = pi(measure.direction.sound['$'].tempo);
-        } catch(ex) {}
+        multi(measure.direction, function(dir) {
+            if ('sound' in dir && '$' in dir.sound) {
+                var t = pi(dir.sound['$'].tempo);
+                if (!isNaN(t)) {
+                    me.tempo = t;
+                    //console.log('tempo: ' + t);
+                }
+            }
+        });
 
         multi(measure.note, function(note, ni) {
             var o;

@@ -1,0 +1,3652 @@
+{
+	"metadata": {
+		"text": "Let it Be\nJohn Lenon and\nPaul MacCartney\nPiano"
+	},
+	"partList": [
+		{
+			"name": "Piano",
+			"channel": 1,
+			"program": 1,
+			"volume": 78.7402,
+			"pan": 0
+		}
+	],
+	"parts": [
+		[
+			{
+				"voices": {
+					"1": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				},
+				"time": [
+					4,
+					4
+				],
+				"tempo": 60
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "E4"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "E4"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "E4"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "E4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "B3"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B3"
+						},
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						]
+					],
+					"2": [
+						{
+							"dur": 16,
+							"rest": true
+						}
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "B3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "A3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D4"
+						}
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "E4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "G4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"note": "A4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G3"
+						},
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "G4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "E4"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "F#4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "A3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "A3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "E4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "C2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "D2"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 8,
+							"type": "half",
+							"note": "G4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "B3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						}
+					],
+					"5": [
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "G4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"note": "A4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "G4"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "G4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "E4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "C2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "F#4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "F#4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G1"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "D2"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 8,
+							"type": "half",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "G4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "B3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "A3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "F#2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "E5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "E4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 6,
+							"type": "quarter",
+							"note": "G4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						},
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "C5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 8,
+							"type": "half",
+							"note": "G4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B3"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "B3"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						}
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 3,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 8,
+							"type": "half",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "G4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "B3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "A3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "F#2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "E5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "E4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 6,
+							"type": "quarter",
+							"note": "G4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						},
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "C5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 8,
+							"type": "half",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "G4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "B3"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "E5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "D5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "A4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "E2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "E4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 6,
+							"type": "quarter",
+							"note": "G4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "C4"
+							}
+						],
+						{
+							"dur": 2,
+							"type": "eighth",
+							"rest": true
+						},
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "C5"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C5"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "16th",
+							"note": "A4"
+						}
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "F#4"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "D2"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 8,
+							"type": "half",
+							"note": "G4"
+						},
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "D3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							}
+						]
+					],
+					"2": [
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "C4"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "E4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "G3"
+							},
+							{
+								"dur": 2,
+								"type": "eighth",
+								"note": "D4"
+							}
+						],
+						[
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "G3"
+							},
+							{
+								"dur": 4,
+								"type": "quarter",
+								"note": "B3"
+							}
+						]
+					],
+					"5": [
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "C3"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "B2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "A2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 2,
+							"type": "eighth",
+							"note": "G2"
+						},
+						{
+							"dur": 4,
+							"type": "quarter",
+							"note": "G2"
+						}
+					]
+				}
+			}
+		]
+	]
+}

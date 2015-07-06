@@ -1,0 +1,272 @@
+{
+	"metadata": {
+		"text": "Happy Birthday"
+	},
+	"partList": [
+		{
+			"channel": 1,
+			"program": 1,
+			"volume": 78.7402,
+			"pan": 0
+		}
+	],
+	"parts": [
+		[
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 4,
+							"type": "half",
+							"rest": true
+						},
+						{
+							"dur": 1,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "eighth",
+							"note": "G4"
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"rest": true
+						}
+					]
+				},
+				"time": [
+					6,
+					8
+				]
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "G4"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "C5"
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"type": "half",
+							"note": "C3"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 4,
+							"type": "half",
+							"note": "B4"
+						},
+						{
+							"dur": 1,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "eighth",
+							"note": "G4"
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"type": "half",
+							"note": "G3"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "A4"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "G4"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "D5"
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"type": "half",
+							"note": "G3"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 4,
+							"type": "half",
+							"note": "C5"
+						},
+						{
+							"dur": 1,
+							"type": "eighth",
+							"note": "G4"
+						},
+						{
+							"dur": 1,
+							"type": "eighth",
+							"note": "G4"
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"type": "half",
+							"note": "C3"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "G5"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "E5"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "C5"
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"type": "half",
+							"note": "C3"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "B4"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "A4"
+						},
+						{
+							"dur": 1,
+							"type": "eighth",
+							"note": "F5"
+						},
+						{
+							"dur": 1,
+							"type": "eighth",
+							"note": "F5"
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"type": "half",
+							"note": "F3"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "E5"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "C5"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"note": "D5"
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"type": "half",
+							"note": "G3"
+						}
+					]
+				}
+			},
+			{
+				"voices": {
+					"1": [
+						{
+							"dur": 4,
+							"type": "half",
+							"note": "C5"
+						},
+						{
+							"dur": 2,
+							"type": "quarter",
+							"rest": true
+						}
+					],
+					"5": [
+						{
+							"dur": 6,
+							"type": "half",
+							"note": "C3"
+						}
+					]
+				}
+			}
+		]
+	]
+}

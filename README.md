@@ -51,6 +51,7 @@ midi sequencer:
 * [chords](http://www.musicxml.com/tutorial/the-midi-compatible-part/chords/)
 * [multi-part music](http://www.musicxml.com/tutorial/the-midi-compatible-part/multi-part-music/)
 * [repeats](http://www.musicxml.com/tutorial/the-midi-compatible-part/repeats/)
+* [multi-part music 2](http://www.musicxml.com/tutorial/notation-basics/multi-part-music-2/)
 
 
 
@@ -72,6 +73,8 @@ voices in the same measure use the same instrument, are implicitly in the same p
 
 ## TODO
 
+- [x] musicxml to json
+- [x] extract relevant data from json file (to .song)
+- [x] using generator to play a song (at least just one voice)
 - [ ] initial svg render based on song
 - [ ] backup support? (may not be required)
-- [ ] using generator to play a song (at least just one voice)
