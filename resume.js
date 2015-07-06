@@ -62,7 +62,7 @@ measures.forEach(function(measure, mi) {
 
 	measure.note.forEach(function(note, ni) {
 		if (note.rest) {
-			console.log(['  dur:', note.duration, ' rest'].join(''));
+			console.log(['  vc:', note.voice, ', dur:', note.duration, ' rest'].join(''));
 		}
 		else {
             var acci = ''; // accidental
@@ -86,7 +86,7 @@ measures.forEach(function(measure, mi) {
                 chord = note.chord; // play at same time as prev note
             }
 
-			console.log(['  dur:', note.duration, /*' ', note.type,*/ ' ', note.pitch.step, acci, note.pitch.octave, ' ', (chord ? ' CHORD': '')].join(''));
+			console.log(['  vc:', note.voice, ', dur:', note.duration, /*' ', note.type,*/ ' ', note.pitch.step, acci, note.pitch.octave, ' ', (chord ? ' CHORD': '')].join(''));
 		}
 	});
 });

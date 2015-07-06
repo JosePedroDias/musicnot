@@ -16,33 +16,68 @@
 
     <body>
         <script>
+            var tempo = 60;
+            var time = [4, 4];
+            var mode = 'string'; // square triangle sawtooth sine string
+
+            var play = function(note) {
+                var f = computeFreq(note);
+                return (mode === 'string' ? genString(f) : genNote(f, mode));
+            };
+
+            var playN = function(notes) {
+                var playing = notes.map(play);
+                return function() {
+                    playing.forEach(function(p) {
+                        p();
+                    });
+                };
+            };
+
+            var song = [
+                {dur:4, notes:['G3', 'B3', 'D4', 'G4']},
+                {dur:4, notes:['G3', 'B3', 'D4', 'G4']},
+                {dur:4, notes:['F#3', 'A3', 'D4']},
+                {dur:4, notes:['F#3', 'A3', 'D4']},
+                {dur:2, notes:['G2']},
+                {dur:2, notes:['G1']},
+                {dur:2, notes:['G2']},
+                {dur:2, notes:['G1']}
+            ];
+
+            var dur;
             var timer, playing;
 
-            var notes = 'C3 D3 E3 F3 G3 A3 B3 C4'.split(' ');
-            //var notes = 'E2 A2 D3 G3 B3 E4'.split(' '); // GUITAR
-            //var notes = 'B0 E1 A1 D2 G2'.split(' '); // BASE
-            var symString = true;
-
             var onTick = function() {
-                var note = notes.shift();
+                if (dur) {
+                    --dur;
+                    return;
+                }
+
+                var o = song.shift();
+
+                if (!o) {
+                    if (playing) {
+                        playing();
+                    }
+                    playing = undefined;
+                    console.log('all done');
+                    return clearInterval(timer);
+                }
+
+                var note = o.notes;
+                dur = o.dur;
 
                 if (playing) {
                     playing();
                     playing = undefined;
                 }
 
-                if (note) {
-                    var f = computeFreq(note);
-                    playing = symString ? genString(f) : genNote(f, 'square');
-                }
-                else {
-                    playing = undefined;
-                    console.log('all done');
-                    clearInterval(timer);
-                }
+                console.log(note);
+                playing = playN(note);
             };
 
-            timer = setInterval(onTick, 500);
+            timer = setInterval(onTick, 60000/tempo/4/2);
         </script>
     </body>
 </html>

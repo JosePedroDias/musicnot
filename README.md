@@ -22,17 +22,16 @@ midi sequencer:
 <http://stuartmemo.com/qwerty-hancock/>  
 <http://loov.github.io/jsfx/music.html> <http://loov.github.io/jsfx/jsmusic.js>
 
-render
-http://www.alphatab.net/
-http://www.vexflow.com/
+### render
+<http://www.alphatab.net/>  
+<http://www.vexflow.com/>
 
-play
-https://github.com/oampo/Audiolet
+### play
+<https://github.com/oampo/Audiolet>
 
-compute
-https://github.com/saebekassebil/teoria
-
-http://www.seventhstring.com/resources/notefrequencies.html
+### compute
+<https://github.com/saebekassebil/teoria>  
+<http://www.seventhstring.com/resources/notefrequencies.html>
 
 
 ## mxl to json

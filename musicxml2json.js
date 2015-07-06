@@ -11,6 +11,6 @@ var inString = fs.readFileSync(inFile).toString();
 mj.musicJSON(inString, function(err, o) {
 	if (err) { throw err; }
 
-	console.log(o);
+	//console.log(o);
 	fs.writeFileSync(outFile, JSON.stringify(o, null, '\t'));
 });
