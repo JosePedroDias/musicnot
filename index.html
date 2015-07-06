@@ -43,7 +43,7 @@
 				};
 
 
-                // TODO TEMP HACK, one part, one voice, joint measures
+                // TODO TEMP HACK -> selects only first part and first voice, joining its measures
                 var song = o.parts[0];
 
                 if ('time' in song[0]) {
@@ -56,7 +56,7 @@
                 }
 
                 song = song.map(function(measure) {
-                    return measure.voices[ Object.keys(measure.voices)[0] ];
+                    return measure.voices[0];
                 });
 
                 var song2 = [];
@@ -81,16 +81,18 @@
 					}
 
 					var o = song.shift();
-                    var isChorus = (o instanceof Array);
 
-					if (!o) {
-						if (playing) {
-							playing();
-						}
-						playing = undefined;
-						console.log('all done');
-						return clearInterval(timer);
-					}
+                    if (!o) {
+                        if (playing) {
+                            playing();
+                        }
+                        playing = undefined;
+                        console.log('all done');
+                        return clearInterval(timer);
+                    }
+
+                    var isChorus = (o instanceof Array);
+                    var isRest = !isChorus && !('note' in o);
 
 					var note = isChorus ? o.map(function(n) { return n.note; })  : o.note;
 					dur = isChorus ? o[0].dur : o.dur;
@@ -100,14 +102,14 @@
 						playing = undefined;
 					}
 
-                    if (o.rest) {
+                    if (isRest) {
                         console.log(cursor, 'rest');
                     }
                     else {
                         console.log(cursor, (isChorus ? 'chorus' : 'note'), note);
                     }
 
-					playing = o.rest ? undefined : (isChorus ? playN(note) : play(note));
+					playing = isRest ? undefined : (isChorus ? playN(note) : play(note));
 
                     ++cursor;
 				};

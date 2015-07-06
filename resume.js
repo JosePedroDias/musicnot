@@ -31,6 +31,15 @@ var multi = function(els, cb) {
     els.forEach(cb);
 };
 
+var valuesOf = function(o) {
+    var arr = [];
+    for (var k in o) {
+        if (!o.hasOwnProperty(k)) { continue; }
+        arr.push(o[k]);
+    }
+    return arr;
+};
+
 
 // text
 multi(scorePartwise.credit, function(credit) {
@@ -93,9 +102,9 @@ multi(scorePartwise.part, function(part, pii) {
             if (note.rest) {
                 //console.log(['  vc:', note.voice, ', dur:', note.duration, ' rest'].join(''));
                 o = {
-                    dur:  pi(note.duration),
-                    type: note.type,
-                    rest: true // could be ommitted
+                    dur:  pi(note.duration)
+                    //type: note.type,
+                    //rest: true // could be ommitted
                 };
             }
             else {
@@ -108,14 +117,6 @@ multi(scorePartwise.part, function(part, pii) {
                     else if (acci === -2) { acci = 'bb'; }
                 }
 
-                /*var tie = ''; // TODO WHAT FOR?
-                 if (note.tie) {
-                 tie = note.tie['$'].type;
-                 }*/
-
-                // voice irrelevant?
-
-
                 if ('chord' in note) {
                     chord = note.chord; // play at same time as prev note
                 }
@@ -123,7 +124,7 @@ multi(scorePartwise.part, function(part, pii) {
                 //console.log(['  vc:', note.voice, ', dur:', note.duration, ' ', note.type, ' ', note.pitch.step, acci, note.pitch.octave, ' ', (chord ? ' CHORD': '')].join(''));
                 o = {
                     dur:  pi(note.duration),
-                    type: note.type,
+                    //type: note.type,
                     note: note.pitch.step+acci+note.pitch.octave
                 };
             }
@@ -148,6 +149,7 @@ multi(scorePartwise.part, function(part, pii) {
             }
         });
 
+        me.voices = valuesOf(me.voices); // get rid of voice keys, irrelevant
         pa.push(me);
     });
 
@@ -156,5 +158,9 @@ multi(scorePartwise.part, function(part, pii) {
 
 
 
-fs.writeFileSync(outFile, JSON.stringify(doc, null, '\t'));
-//fs.writeFileSync(outFile, JSON.stringify(doc));
+if (0) {
+    fs.writeFileSync(outFile, JSON.stringify(doc, null, '\t'));
+}
+else {
+    fs.writeFileSync(outFile, JSON.stringify(doc));
+}
