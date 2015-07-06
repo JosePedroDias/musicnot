@@ -3,11 +3,18 @@ var fs = require('fs');
 
 var args = process.argv.slice();
 var inFile = args.pop();
-//var outFile = inFile.replace('.json', '.song');
+var outFile = inFile.replace('.json', '.song');
+
+
+
+var pi = function(n) { return parseInt(n, 10); };
+var pf = function(n) { return parseFloat(n); };
 
 
 
 var song = JSON.parse( fs.readFileSync(inFile).toString() );
+
+var doc = {metadata:{text:''}, instruments:[], measures:[]};
 
 /**
  * % object index
@@ -27,20 +34,28 @@ var multi = function(els, cb) {
 
 // text
 multi(scorePartwise.credit, function(credit) {
-    console.log('TEXT: ' + credit['credit-words']._);
+    //console.log('TEXT: ' + credit['credit-words']._);
+    doc.metadata.text += (doc.metadata.text.length === 0 ? '' : '\n') + credit['credit-words']._;
 });
 
 
 
 // instruments
 multi(scorePartwise['part-list']['score-part'], function(sp) {
-	console.log('CHANNEL:')
-	console.log('  name:    ' + sp['part-name']);
+	//console.log('CHANNEL:')
+	//console.log('  name:    ' + sp['part-name']);
 	var mi = sp['midi-instrument'];
-	console.log('  channel: ' + mi['midi-channel']);
-	console.log('  program: ' + mi['midi-program']);
-	console.log('  volume:  ' + mi['volume']);
-	console.log('  pan:     ' + mi['pan']);
+	//console.log('  channel: ' + mi['midi-channel']);
+	//console.log('  program: ' + mi['midi-program']);
+	//console.log('  volume:  ' + mi['volume']);
+	//console.log('  pan:     ' + mi['pan']);
+    doc.instruments.push({
+        name:    sp['part-name'],
+        channel: pi(mi['midi-channel']),
+        program: pi(mi['midi-program']),
+        volume:  pf(mi['volume']),
+        pan:     pf(mi['pan'])
+    });
 });
 
 
@@ -49,6 +64,7 @@ multi(scorePartwise['part-list']['score-part'], function(sp) {
 var measures = scorePartwise['part'].measure;
 
 measures.forEach(function(measure, mi) {
+    var me = {};
 	var attrs = measure.attributes;
 	console.log('MEASURE #' + mi);
 
@@ -89,4 +105,8 @@ measures.forEach(function(measure, mi) {
 			console.log(['  vc:', note.voice, ', dur:', note.duration, /*' ', note.type,*/ ' ', note.pitch.step, acci, note.pitch.octave, ' ', (chord ? ' CHORD': '')].join(''));
 		}
 	});
+
+    doc.measures.push(me);
+
+    fs.writeFileSync(outFile, JSON.stringify(doc, null, '\t'));
 });
