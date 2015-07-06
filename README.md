@@ -64,6 +64,11 @@ Bass strings are (5th string) B0=30.87Hz, (4th string) E1=41.20Hz, A1=55Hz, D2=7
 
 
 
+parts stand for different instruments/players, running side by side in the score sheet
+
+voices in the same measure use the same instrument, are implicitly in the same part and stand for different sequences im parallel
+
+
 
 ## TODO
 

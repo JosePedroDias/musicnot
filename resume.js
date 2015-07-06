@@ -14,7 +14,7 @@ var pf = function(n) { var v = parseFloat(n);   return isNaN(v) ? undefined : v;
 
 var song = JSON.parse( fs.readFileSync(inFile).toString() );
 
-var doc = {metadata:{text:''}, instruments:[], measures:[]};
+var doc = {metadata:{text:''}, partList:[], parts:[]};
 
 /**
  * % object index
@@ -49,7 +49,7 @@ multi(scorePartwise['part-list']['score-part'], function(sp) {
 	//console.log('  program: ' + mi['midi-program']);
 	//console.log('  volume:  ' + mi['volume']);
 	//console.log('  pan:     ' + mi['pan']);
-    doc.instruments.push({
+    doc.partList.push({
         name:    sp['part-name'],
         channel: pi(mi['midi-channel']),
         program: pi(mi['midi-program']),
@@ -62,6 +62,8 @@ multi(scorePartwise['part-list']['score-part'], function(sp) {
 
 multi(scorePartwise.part, function(part, pii) {
     console.log('PART #' + pii);
+
+    var pa = [];
 
     multi(part.measure, function(measure, mi) {
         console.log('MEASURE #' + mi);
@@ -141,8 +143,10 @@ multi(scorePartwise.part, function(part, pii) {
             }
         });
 
-        doc.measures.push(me);
+        pa.push(me);
     });
+
+    doc.parts.push(pa);
 });
 
 
