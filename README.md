@@ -61,3 +61,12 @@ Piano range is A0=27.50Hz to C8=4186Hz
 Guitar strings are E2=82.41Hz, A2=110Hz, D3=146.8Hz, G3=196Hz, B3=246.9Hz, E4=329.6Hz
 
 Bass strings are (5th string) B0=30.87Hz, (4th string) E1=41.20Hz, A1=55Hz, D2=73.42Hz, G2=98Hz
+
+
+
+
+## TODO
+
+- [ ] initial svg render based on song
+- [ ] backup support? (may not be required)
+- [ ] using generator to play a song (at least just one voice)

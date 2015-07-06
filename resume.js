@@ -7,8 +7,8 @@ var outFile = inFile.replace('.json', '.song');
 
 
 
-var pi = function(n) { return parseInt(n, 10); };
-var pf = function(n) { return parseFloat(n); };
+var pi = function(n) { var v = parseInt(n, 10); return isNaN(v) ? undefined : v; };
+var pf = function(n) { var v = parseFloat(n);   return isNaN(v) ? undefined : v; };
 
 
 
@@ -60,53 +60,92 @@ multi(scorePartwise['part-list']['score-part'], function(sp) {
 
 
 
-// measures w/ notes
-var measures = scorePartwise['part'].measure;
+multi(scorePartwise.part, function(part, pii) {
+    console.log('PART #' + pii);
 
-measures.forEach(function(measure, mi) {
-    var me = {};
-	var attrs = measure.attributes;
-	console.log('MEASURE #' + mi);
+    multi(part.measure, function(measure, mi) {
+        console.log('MEASURE #' + mi);
 
-	if (attrs && 'time' in attrs) {
-		console.log('  time: ' + attrs.time.beats + ' / ' + attrs.time['beat-type']);
-	}
+        var me = {voices:{}};
+        var attrs = measure.attributes;
 
-    try {
-        console.log('  tempo: ' + measure.direction.sound['$'].tempo);
-    } catch(ex) {}
+        if (attrs && 'time' in attrs) {
+            //console.log('  time: ' + attrs.time.beats + ' / ' + attrs.time['beat-type']);
+            me.time = [ pi(attrs.time.beats), pi(attrs.time['beat-type']) ];
+        }
 
-	measure.note.forEach(function(note, ni) {
-		if (note.rest) {
-			console.log(['  vc:', note.voice, ', dur:', note.duration, ' rest'].join(''));
-		}
-		else {
-            var acci = ''; // accidental
-            if (note.pitch.alter) {
-                acci = parseInt(note.pitch.alter, 10);
-                if      (acci ===  1) { acci = '#'; }
-                else if (acci ===  2) { acci = '##'; }
-                else if (acci === -1) { acci = 'b'; }
-                else if (acci === -2) { acci = 'bb'; }
-            }
+        try {
+            //console.log('  tempo: ' + measure.direction.sound['$'].tempo);
+            me.tempo = pi(measure.direction.sound['$'].tempo);
+        } catch(ex) {}
 
-            /*var tie = ''; // TODO WHAT FOR?
-            if (note.tie) {
-                tie = note.tie['$'].type;
-            }*/
-
-            // voice irrelevant?
-
+        multi(measure.note, function(note, ni) {
+            var o;
             var chord = false;
-            if ('chord' in note) {
-                chord = note.chord; // play at same time as prev note
+
+            if (note.rest) {
+                //console.log(['  vc:', note.voice, ', dur:', note.duration, ' rest'].join(''));
+                o = {
+                    dur:  pi(note.duration),
+                    type: note.type,
+                    rest: true // could be ommitted
+                };
+            }
+            else {
+                var acci = ''; // accidental
+                if (note.pitch.alter) {
+                    acci = parseInt(note.pitch.alter, 10);
+                    if      (acci ===  1) { acci = '#'; }
+                    else if (acci ===  2) { acci = '##'; }
+                    else if (acci === -1) { acci = 'b'; }
+                    else if (acci === -2) { acci = 'bb'; }
+                }
+
+                /*var tie = ''; // TODO WHAT FOR?
+                 if (note.tie) {
+                 tie = note.tie['$'].type;
+                 }*/
+
+                // voice irrelevant?
+
+
+                if ('chord' in note) {
+                    chord = note.chord; // play at same time as prev note
+                }
+
+                //console.log(['  vc:', note.voice, ', dur:', note.duration, ' ', note.type, ' ', note.pitch.step, acci, note.pitch.octave, ' ', (chord ? ' CHORD': '')].join(''));
+                o = {
+                    dur:  pi(note.duration),
+                    type: note.type,
+                    note: note.pitch.step+acci+note.pitch.octave
+                };
             }
 
-			console.log(['  vc:', note.voice, ', dur:', note.duration, /*' ', note.type,*/ ' ', note.pitch.step, acci, note.pitch.octave, ' ', (chord ? ' CHORD': '')].join(''));
-		}
-	});
+            var bag = me.voices[note.voice];
+            if (!bag) {
+                bag = [];
+                me.voices[note.voice] = bag;
+            }
 
-    doc.measures.push(me);
+            if ('chord' in note && note.chord) {
+                var subBag = bag[bag.length-1];
+                if (subBag instanceof Array) {
+                    subBag.push(o);
+                }
+                else {
+                    bag[bag.length-1] = [bag[bag.length-1], o];
+                }
+            }
+            else {
+                bag.push(o);
+            }
+        });
 
-    fs.writeFileSync(outFile, JSON.stringify(doc, null, '\t'));
+        doc.measures.push(me);
+    });
 });
+
+
+
+fs.writeFileSync(outFile, JSON.stringify(doc, null, '\t'));
+//fs.writeFileSync(outFile, JSON.stringify(doc));
