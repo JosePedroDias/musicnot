@@ -22,13 +22,24 @@ midi sequencer:
 <http://stuartmemo.com/qwerty-hancock/>  
 <http://loov.github.io/jsfx/music.html> <http://loov.github.io/jsfx/jsmusic.js>
 
+render
+http://www.alphatab.net/
+http://www.vexflow.com/
+
+play
+https://github.com/oampo/Audiolet
+
+compute
+https://github.com/saebekassebil/teoria
+
+http://www.seventhstring.com/resources/notefrequencies.html
 
 
-## mxl  to json
+## mxl to json
 
 	unzip file
 	rename .xml file and remove meta dir
-	node index.js (gera out.json)
+	node musicxml2json.js file.xml
 
 
 
@@ -41,3 +52,13 @@ midi sequencer:
 * [chords](http://www.musicxml.com/tutorial/the-midi-compatible-part/chords/)
 * [multi-part music](http://www.musicxml.com/tutorial/the-midi-compatible-part/multi-part-music/)
 * [repeats](http://www.musicxml.com/tutorial/the-midi-compatible-part/repeats/)
+
+
+
+## notes
+
+Piano range is A0=27.50Hz to C8=4186Hz
+
+Guitar strings are E2=82.41Hz, A2=110Hz, D3=146.8Hz, G3=196Hz, B3=246.9Hz, E4=329.6Hz
+
+Bass strings are (5th string) B0=30.87Hz, (4th string) E1=41.20Hz, A1=55Hz, D2=73.42Hz, G2=98Hz
