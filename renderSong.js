@@ -135,6 +135,9 @@ window.renderSong = function(o, chosenPartIdx) {
     var WHITE_GAP = 2;
     var COLOR_WHITE = '#FFFFFF';
     var COLOR_BLACK = '#000000';
+    var COLOR_DARK_GRAY = '#333333';
+    var COLOR_MEDIUM_GRAY = '#777777';
+    var COLOR_LIGHT_GRAY = '#BBBBBB';
 
 
 
@@ -148,7 +151,7 @@ window.renderSong = function(o, chosenPartIdx) {
             strokeWidth: width
         }).pattern(0, 0, 10*S, 10*S);
     };
-    var hatch = genStripesPattern(1/16, '#000000', 2/16);
+    var hatch = genStripesPattern(1/16, COLOR_MEDIUM_GRAY, 2/16);
 
 
 
@@ -187,8 +190,8 @@ window.renderSong = function(o, chosenPartIdx) {
 
         if (haveSustainedAfter.indexOf(letter) !== -1) {
             var l = s.line(x1, 0, x1, h);
-            l.attr('stroke', COLOR_BLACK);
-            l.attr('stroke-width', isC ? 0.5 : 0.25);
+            l.attr('stroke', isC ? COLOR_MEDIUM_GRAY : COLOR_LIGHT_GRAY);
+            l.attr('stroke-width', isC ? 0.5 : 0.33);
             l.addClass('sustained-note');
             l.addClass(nextNote);
             bgGroup.add(l);
