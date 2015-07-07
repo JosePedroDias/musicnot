@@ -1,4 +1,4 @@
-window.playSong = function(o) {
+window.playSong = function(o, chosenPart) {
     'use strict';
 
     var tempo = 60;
@@ -22,7 +22,7 @@ window.playSong = function(o) {
 
 
     // TODO TEMP HACK -> selects only first part and first voice, joining its measures
-    var song = o.parts[0];
+    var song = o.parts[chosenPart];
 
     if ('time' in song[0]) {
         time = song[0].time;

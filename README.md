@@ -20,38 +20,6 @@ Next I'm generate the SVG visualization from the generated song files.
 
 
 
-## survey
-
-### parse musicXML
-<https://github.com/saebekassebil/musicjson>
-
-### generate SVG on server-side via snapSVG  
-<https://github.com/dodo/node-raphael/blob/master/playSong.js>
-
-###piano interface + web audio
-<http://stuartmemo.com/qwerty-hancock/>  
-<http://loov.github.io/jsfx/music.html> <http://loov.github.io/jsfx/jsmusic.js>
-
-### render
-<http://www.alphatab.net/>  
-<http://www.vexflow.com/>
-
-### play
-<https://github.com/oampo/Audiolet>
-
-### compute
-<https://github.com/saebekassebil/teoria>  
-<http://www.seventhstring.com/resources/notefrequencies.html>
-
-
-
-## mxl to json
-
-	unzip file
-	rename .xml file and remove meta dir
-	node musicxml2json.js file.xml
-
-
 ## musicXML ref
 
 * [attributes](http://www.musicxml.com/tutorial/the-midi-compatible-part/attributes/)
@@ -81,10 +49,11 @@ voices in the same measure use the same instrument, are implicitly in the same p
 
 ## files
 
-- `musicxml2json.js` (server-side) - a dumb wrapper around the `musicjson` module. outputs same filename, but in JSON. 
-- `resume.js` (server-side) - parses the JSON file into a summarized structure, relevant for viz rendering and simple playback
-- `generator.js` (client-side) - makes sound using webaudio
-- `playSong.js` (client-side) - plays the chosen song. will render visualization too.
+- `getMusicXMLFromInput.js` - reads file from user. supports both XML and MXL zipped MusicXML files. returns XML document on cb
+- `generator.js` - generates sounds using webaudio
+- `parseSong.js` - parse relevant song structure from XML document
+- `playSong.js` - plays the chosen song based on parsed song structure and using generators above 
+- `renderSong.js` - renders visual representation for the music score with SVG based on parsed song structure
 
 
 
@@ -94,4 +63,4 @@ voices in the same measure use the same instrument, are implicitly in the same p
 - [x] extract relevant data from json file (to .song)
 - [x] using generator to play a song (at least just one voice)
 - [ ] support for multiple voices
-- [ ] initial SVG render based on song
+- [-] initial SVG render based on song

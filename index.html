@@ -10,13 +10,36 @@
         <link rel="stylesheet" href="index.css"/>
     </head>
 
-	<body>
+    <body>
+        <input type="file" id="file-input">
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"></svg>
 
+        <!-- zip, file reading and MusicXML parsing -->
+        <script src="vendor/zip.js"></script>
+        <script src="getMusicXMLFromInput.js"></script>
+        <script src="parseSong.js"></script>
+
+        <!-- svg and score rendering -->
         <script src="vendor/snap.svg-min.js"></script>
-		<script src="generator.js"></script>
-        <script src="playSong.js"></script>
-        <script src="fetchSong.js"></script>
         <script src="renderSong.js"></script>
-	</body>	
+
+        <!-- audio - sfx and sequencer -->
+        <script src="generator.js"></script>
+        <script src="playSong.js"></script>
+
+        <script>
+            var fileInput = document.getElementById('file-input');
+            getMusicXMLFromInput(fileInput, function(doc) {
+                //console.log('got doc', doc);
+
+                var song = parseSong(doc);
+                //console.log(song);
+
+                playSong(song, 0);
+
+                renderSong(song, 0);
+            });
+        </script>
+    </body>
 </html>
