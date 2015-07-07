@@ -117,6 +117,7 @@ window.renderSong = function(o, chosenPartIdx) {
         return notesInSong;
     };
     var notesInSong = findNotes(chosenPart);
+    console.log('notesInSong', notesInSong);
     var minNote = notesInSong[0];
     var maxNote = notesInSong[notesInSong.length - 1];
     //console.log(minNote, maxNote);
@@ -133,11 +134,17 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
     var WHITE_GAP = 2;
+
+    var HAND_LEFT = 0;
+    var HAND_RIGHT = 1;
+
     var COLOR_WHITE = '#FFFFFF';
     var COLOR_BLACK = '#000000';
     var COLOR_DARK_GRAY = '#333333';
     var COLOR_MEDIUM_GRAY = '#777777';
     var COLOR_LIGHT_GRAY = '#BBBBBB';
+    var COLOR_STROKES = ['#d0e5ff', '#c9eda2'];
+    var COLOR_TOUCHES = ['#8dc1ff', '#7ed321'];
 
 
 
@@ -201,6 +208,40 @@ window.renderSong = function(o, chosenPartIdx) {
         noteToXLookup[prevNote] = x0;
         noteToXLookup[note] = xc;
         noteToXLookup[nextNote] = x1;
+
+
+
+        var drawStroke = function(note, y0, y1, hand) {
+            var x = noteToXLookup[note];
+            var l = s.line(x, y0, x, y1);
+            l.attr('fill', 'none');
+            l.attr('stroke', COLOR_STROKES[hand]);
+            l.attr('stroke-width', WHITE_GAP*0.9);
+            l.attr('stroke-linejoin', 'round');
+            l.attr('stroke-linecap', 'round');
+        };
+
+        var drawBridge = function(note0, note1, y, hand) {
+            var x0 = noteToXLookup[note0];
+            var x1 = noteToXLookup[note1];
+            var l = s.line(x0, y, x1, y);
+            l.attr('fill', 'none');
+            l.attr('stroke', COLOR_STROKES[hand]);
+            l.attr('stroke-width', WHITE_GAP*0.5);
+            l.attr('stroke-linejoin', 'round');
+            l.attr('stroke-linecap', 'round');
+        };
+
+        var drawTouch = function(note, y, hand) {
+            var x = noteToXLookup[note];
+            var c = s.circle(x, y, WHITE_GAP*0.4);
+            c.attr('fill', COLOR_TOUCHES[hand]);
+        };
+
+        var h = HAND_LEFT;
+        drawStroke('B3', 1, 5, h);
+        drawBridge('B3', 'G3', 1, h);
+        drawTouch('B3', 1, h);
     });
     //console.log(noteToXLookup)
 
