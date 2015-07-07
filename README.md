@@ -26,7 +26,7 @@ Next I'm generate the SVG visualization from the generated song files.
 <https://github.com/saebekassebil/musicjson>
 
 ### generate SVG on server-side via snapSVG  
-<https://github.com/dodo/node-raphael/blob/master/index.js>
+<https://github.com/dodo/node-raphael/blob/master/playSong.js>
 
 ###piano interface + web audio
 <http://stuartmemo.com/qwerty-hancock/>  
@@ -76,6 +76,15 @@ Bass strings are (5th string) B0=30.87Hz, (4th string) E1=41.20Hz, A1=55Hz, D2=7
 parts stand for different instruments/players, running side by side in the score sheet
 
 voices in the same measure use the same instrument, are implicitly in the same part and stand for different sequences im parallel
+
+
+
+## files
+
+- `musicxml2json.js` (server-side) - a dumb wrapper around the `musicjson` module. outputs same filename, but in JSON. 
+- `resume.js` (server-side) - parses the JSON file into a summarized structure, relevant for viz rendering and simple playback
+- `generator.js` (client-side) - makes sound using webaudio
+- `playSong.js` (client-side) - plays the chosen song. will render visualization too.
 
 
 

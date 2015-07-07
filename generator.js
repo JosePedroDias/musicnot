@@ -6,7 +6,17 @@
 
 
 
-    var notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+    window.NOTES = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
+
+    var rotL = function(arr) {
+        arr.push( arr.shift() );
+    };
+
+    window.NOTES_STARTING_IN_C = window.NOTES.slice();
+    rotL(window.NOTES_STARTING_IN_C);
+    rotL(window.NOTES_STARTING_IN_C);
+    rotL(window.NOTES_STARTING_IN_C);
+
     var noteToFreq = {};
 
     // note to frequency computation
@@ -24,7 +34,7 @@
             octave = note.charAt(1);
         }
 
-        keyNumber = notes.indexOf(note.slice(0, -1));
+        keyNumber = window.NOTES.indexOf(note.slice(0, -1));
 
         if (keyNumber < 3) {
             keyNumber = keyNumber + 12 + ((octave - 1) * 12) + 1;
