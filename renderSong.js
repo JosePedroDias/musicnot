@@ -133,6 +133,8 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
     var WHITE_GAP = 2;
+    var COLOR_WHITE = '#FFFFFF';
+    var COLOR_BLACK = '#000000';
 
 
 
@@ -146,7 +148,7 @@ window.renderSong = function(o, chosenPartIdx) {
             strokeWidth: width
         }).pattern(0, 0, 10*S, 10*S);
     };
-    var p = genStripesPattern(1/16, '#000000', 2/16);
+    var hatch = genStripesPattern(1/16, '#000000', 2/16);
 
 
 
@@ -155,6 +157,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
     var noteToXLookup = {};
+    var bgGroup = s.group();
     songWhites.forEach(function(note, idx) {
         var h = 10;
 
@@ -166,20 +169,30 @@ window.renderSong = function(o, chosenPartIdx) {
         var nextNote = flatToSustained(note);
 
         var r = s.rect(x0, 0, WHITE_GAP, h);
-        r.addClass(note);
+        r.attr('fill', COLOR_WHITE);
 
         var letter = note[0];
 
         var isC = (letter === 'C');
 
-        r.attr('fill', isC ? p : '#FFFFFF');
+        var g = r;
+        if (isC) {
+            var r2 = s.rect(x0, 0, WHITE_GAP, h);
+            r2.attr('fill', hatch);
+            g = s.group(r, r2);
+        }
+        g.addClass('flat-note');
+        g.addClass(note);
+        bgGroup.add(g);
 
         if (haveSustainedAfter.indexOf(letter) !== -1) {
             var l = s.line(x1, 0, x1, h);
-            l.attr('stroke', '#000000');
+            l.attr('stroke', COLOR_BLACK);
             l.attr('stroke-width', isC ? 0.5 : 0.25);
+            l.addClass('sustained-note');
+            l.addClass(nextNote);
+            bgGroup.add(l);
         }
-
 
         //console.log(prevNote, note, nextNote);
         noteToXLookup[prevNote] = x0;
