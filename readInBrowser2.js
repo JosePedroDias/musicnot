@@ -25,10 +25,10 @@
         var reader = new FileReader();
         reader.addEventListener('loadend', function() {
             var s = reader.result;
-
             var parser = new DOMParser();
             var doc = parser.parseFromString(s, 'text/xml');
-            console.log(doc);
+            window.parseSong(doc);
+
         });
         reader.readAsText(blob);
     };
@@ -44,18 +44,15 @@
         fileInput.disabled = true;
         var file0 = fileInput.files[0];
 
-        console.log('received file:', file0.name);
+        //console.log('received file:', file0.name);
 
         if (isXmlFileNotMeta(file0.name)) {
-            console.log('uploaded file is an xml. parse directly...');
+            //console.log('uploaded file is an xml. parse directly...');
             return parseMusicXMLFile(file0);
         }
-        console.log('uploaded file is an mxl zip file. deflating...');
+        //console.log('uploaded file is an mxl zip file. deflating...');
 
         model.getEntries(file0, function (entries) {
-            /*console.log(entries);
-             entries.forEach(download);*/
-
             var entry;
             entries.some(function(_entry) {
                 if (isXmlFileNotMeta(_entry.filename)) {
@@ -64,7 +61,7 @@
                 }
             });
 
-            console.log('found', entry);
+            //console.log('found', entry);
             model.getEntryFile(entry, parseMusicXMLFile);
         });
     }, false);
