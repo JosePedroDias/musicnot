@@ -9,14 +9,14 @@ article:
 
 I loved the article and got the idea of implementing such visualization in SVG based on a given sound sheet.
 I had already processed MIDI files before and it is very hard. This time I tried with MusicXML, which gave much
-better results because it's more of a human-friendly format, keeping both midi information and score layout info.
+better results because it's more of a human-friendly format, storing both MIDI information and score layout info.
 
 Used the [musescore sheetmusic database](https://musescore.com/sheetmusic) to fetch some simple and recognizable songs.
 
-I ended up parsing the MusicXML file to a simpler format and playing it back naively with webaudio.
+I ended up parsing the MusicXML file to a simpler format and playing it back naively with WebAudio.
 Kinda works in a modular way, though it relies on setInterval so far O:)
 
-Next I'm generate the SVG visualization from the generated song files.
+Next I'm generating the SVG visualization from the parsed song files next!
 
 
 
@@ -57,10 +57,10 @@ voices in the same measure use the same instrument, are implicitly in the same p
 
 
 
-## TODO
+## roadmap
 
-- [x] musicxml to json
-- [x] extract relevant data from json file (to .song)
-- [x] using generator to play a song (at least just one voice)
-- [ ] support for multiple voices
-- [-] initial SVG render based on song
+- [x] support for MusicXML file reading, both directly (xml) and zip (mxl)
+- [x] parsing of relevant song data from MusicXML
+- [x] using generator to play a song (just the selected part, first voice)
+- [ ] support for multiple voices playback
+- [ ] SVG visualization of a part based on song data

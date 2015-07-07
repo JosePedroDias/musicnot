@@ -24,7 +24,7 @@ svg {
     height: 100%;
 }
 
-input {
+.form {
     position: fixed;
     top: 0;
     left: 0;
