@@ -47,13 +47,20 @@ voices in the same measure use the same instrument, are implicitly in the same p
 
 
 
-## files
+## JS files
 
+- `common.js` - some code user several times
 - `getMusicXMLFromInput.js` - reads file from user. supports both XML and MXL zipped MusicXML files. returns XML document on cb
 - `generator.js` - generates sounds using webaudio
 - `parseSong.js` - parse relevant song structure from XML document
 - `playSong.js` - plays the chosen song based on parsed song structure and using generators above 
 - `renderSong.js` - renders visual representation for the music score with SVG based on parsed song structure
+
+
+## results so far
+
+* [index](http://josepedrodias.github.io/musicnot/index.html)
+* [guitar](http://josepedrodias.github.io/musicnot/guitar.html)
 
 
 

@@ -56,6 +56,13 @@
 
 
 
+    // feature detection
+    w.hasTouch = function() { // from modernizr
+        return (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
+    };
+
+
+
     // music-related
 
     w.NOTES = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];

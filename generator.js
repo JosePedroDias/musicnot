@@ -42,13 +42,34 @@
 
 
     // shared webaudio nodes
-    var CTX = new AudioContext();
+    var DEST, CTX = new AudioContext();
+
+
+
+    // MASTERGAIN/DEST -> CTX.DESTINATION
 
     var masterGain = CTX.createGain();
     masterGain.gain.value = 0.3;
     masterGain.connect(CTX.destination);
+    DEST = masterGain;
 
-    var DEST = masterGain;
+
+
+    // DELAY/DEST -> FEEDBACK -> FILTER -> CTX.DESTINATION
+
+    /*var delay = CTX.createDelay();
+    delay.delayTime.value = 0.5;
+
+    var feedback = CTX.createGain();
+    feedback.gain.value = 0.8;
+
+    var filter = CTX.createBiquadFilter();
+    filter.frequency.value = 1000;
+
+    DEST = delay;
+    delay.connect(feedback);
+    feedback.connect(filter);
+    filter.connect(CTX.destination);*/
 
 
 

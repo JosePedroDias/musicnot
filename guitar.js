@@ -1,16 +1,11 @@
 (function() {
     'use strict';
 
-    var hasMark = [3, 5, 7, 9, 15, 17, 19]; hasMark       = mapAdd(hasMark,       -1);
-    var hasDoubleMark = [12];               hasDoubleMark = mapAdd(hasDoubleMark, -1);
 
-    var s = Snap('svg');
-
+    // constants
     var COLOR_BLACK = '#000000';
     var COLOR_DARK_GRAY = '#333333';
-    var COLOR_MEDIUM_GRAY = '#777777';
     var COLOR_LIGHT_GRAY = '#BBBBBB';
-    var COLOR_WHITE = '#FFFFFF';
     var COLOR_BROWN = '#9a745d';
 
     var FRET_W   = 12;
@@ -19,31 +14,53 @@
     var NUM_FRETS = 15;
     var W = NUM_FRETS * FRET_W;
     var H = NUM_STRINGS * STRING_H;
-    var MARK_R = FRET_W * 0.1;
+    var MARK_R   = FRET_W * 0.1;
+    var FINGER_R = FRET_W * 0.15;
+
+    var hasMark = [3, 5, 7, 9, 15, 17, 19];
+    var hasDoubleMark = [12];
+
+    var HAS_TOUCH = hasTouch();
+
+    var STRING_PLAYBACK_DURATION = 4000;
+
+
+
+    // variables
+    var chord = seq(NUM_STRINGS).map(function() { return 0; });
+
+    // http://songsonguitar.com/wp-content/uploads/2013/12/full-standard-chord-chart.jpg
+    //chord = [0, 0, 2, 2, 2, 0]; // A
+
+    var fretNotes = seq(NUM_STRINGS).map(function() { return []; });
+
+
+
+    // svg-related
+    var s = Snap('svg');
+    var fingerG;
+
 
 
     var drawFretboard = function() {
-        s   .rect(0, 0, W, H)
+        s   .rect(FRET_W, 0, W-FRET_W, H)
             .addClass('fretboard')
             .attr('fill', COLOR_BROWN);
     };
-
-
 
     var drawFrets = function() {
         var g = s   .group()
                     .addClass('frets');
         seq(NUM_FRETS).forEach(function(fretIdx) {
+            if (fretIdx === 0) { return; }
             var x = FRET_W * fretIdx;
             s   .line(x, 0, x, H)
                 .attr('stroke', COLOR_BLACK)
                 .addClass('fret')
-                .attr('stroke-width', fretIdx === 0 ? 2 : 1)
+                .attr('stroke-width', fretIdx === 1 ? 2 : 1)
                 .appendTo(g);
         });
     };
-
-
 
     var drawMarks = function() {
         var cy = STRING_H * NUM_STRINGS * 0.5;
@@ -71,14 +88,12 @@
         });
     };
 
-
-
     var drawStrings = function() {
         var g = s   .group()
                     .addClass('strings');
         seq(NUM_STRINGS).forEach(function(stringIdx) {
             var y = STRING_H * (stringIdx + 0.5);
-            s   .line(0, y, W, y)
+            s   .line(FRET_W, y, W, y)
                 .attr('stroke', COLOR_DARK_GRAY)
                 .addClass('string')
                 .attr('stroke-width', (stringIdx + 1.5) * 0.1)
@@ -86,25 +101,83 @@
         });
     };
 
-
-
     var drawPlayables = function() {
         var g = s   .group()
                     .addClass('playables');
-        seq(NUM_STRINGS).forEach(function(stringIdx) {
+        var h = STRING_H / 2;
+        var h2 = h/2;
+        seq(NUM_FRETS).forEach(function(fretIdx) {
+            var x = FRET_W * fretIdx;
+            seq(NUM_STRINGS).forEach(function(stringIdx) {
             var stringIdx2 = NUM_STRINGS - stringIdx - 1;
-            seq(NUM_FRETS).forEach(function(fretIdx) {
-                var x = FRET_W   * fretIdx;
-                var y = STRING_H * stringIdx;
-                s   .rect(x, y, FRET_W, STRING_H)
+                /*var y = STRING_H * stringIdx; // MODE FULL RECT
+                s   .rect(x, y, FRET_W, STRING_H)*/
+
+                var note = getNoteDiff(GUITAR_NOTES[stringIdx2], fretIdx);
+
+                fretNotes[stringIdx2].push(note);
+
+                var y = STRING_H * (stringIdx + 0.5); // MODE HALF HEIGHT
+                s   .rect(x, y-h2, FRET_W, h)
+
                     .addClass('playable')
                     .attr('opacity', 0.001)
+                    //.attr('fill', 'red') // DEBUG
                     .attr('data-fret', fretIdx)
                     .attr('data-string', stringIdx2)
-                    .attr('data-note', getNoteDiff(GUITAR_NOTES[stringIdx2], fretIdx))
+                    .attr('data-note', note)
                     .appendTo(g);
             });
         });
+    };
+
+    var updateChord = function(chord) {
+        seq(NUM_STRINGS).forEach(function(stringIdx) {
+            var stringIdx2 = NUM_STRINGS - stringIdx - 1;
+            var v = chord[stringIdx];
+            var c = s.select('.chord-' + stringIdx);
+            if (!c && v === 0) { return; }
+
+            var fretIdx = 0;
+            if (c) {
+                parseInt(c.attr('data-fret'), 10);
+            }
+
+            if (!c && v === fretIdx) { return; }
+
+            var x = FRET_W * (v + 0.75);
+            var y = STRING_H * (stringIdx2 + 0.5);
+
+            if (!c) { // create
+                c = s   .circle(x, y, FINGER_R)
+                    .attr('fill', '#770000')
+                    .addClass('finger')
+                    .addClass('chord-' + stringIdx)
+                    .appendTo(fingerG);
+            }
+            else if (v === 0) { // remove
+                c.remove();
+            }
+            else { // update
+                c.attr('cx', x);
+            }
+        });
+    };
+
+    var drawToggleChordMode = function() {
+        var r = s   .rect(2.5, -10, 5, 5)
+                    .attr('fill', 'red')
+                    .addClass('toggle-chord-mode');
+        var onToggle = function() {
+            modeEditChord = !modeEditChord;
+            r.attr('fill', modeEditChord ? 'green' : 'red');
+
+            if (!modeEditChord) {
+                seq(NUM_STRINGS).forEach(function(i) { chord[i] = 0; });
+                updateChord(chord);
+            }
+        };
+        r.node.addEventListener(HAS_TOUCH ? 'touchstart' : 'mousedown', onToggle);
     };
 
 
@@ -115,41 +188,96 @@
     drawMarks();
     drawStrings();
     drawPlayables();
+    drawToggleChordMode();
+
+    fingerG = s.group().addClass('fingers');
+    updateChord(chord);
 
 
 
-    // respond to click/touch
     var ongoingStrings = new Array(NUM_STRINGS);
-    var onClickPlayable = function(ev) {
-        var el = ev.target;
-        var note = el.dataset.note;
-        var string = parseInt(el.dataset.string, 10);
-        //console.log(string, note);
 
-        var pair = ongoingStrings[string];  // [cb, timer]
+
+
+    var playString = function(stringIdx, fretIdx, note) {
+        var pair = ongoingStrings[stringIdx];  // [cb, timer]
         if (pair) {
             //console.log('replacing string oscillator #%s', string);
             clearTimeout(pair[1]);
             pair[0]();
         }
         /*else {
-            console.log('not playing before');
-        }*/
+         console.log('not playing before');
+         }*/
 
         var freq = computeFreq(note);
 
         var cb = genString(freq);
+
         var timer = setTimeout(
             function() {
-                ongoingStrings[this.string][0]();
-                ongoingStrings[this.string] = undefined;
-                //console.log('killed oscillator #%s', this.string);
-            }.bind({string:string}), 4000
+                var s = this.string;
+                ongoingStrings[s][0]();
+                ongoingStrings[s] = undefined;
+                //console.log('killed oscillator #%s', s);
+            }.bind({string:stringIdx}), STRING_PLAYBACK_DURATION
         );
 
-        ongoingStrings[string] = [cb, timer];
+        ongoingStrings[stringIdx] = [cb, timer];
     };
-    s.select('.playables').node.addEventListener('mousedown', onClickPlayable);
+
+
+
+    // respond to click/touch
+    var isDown = false;
+    var modeEditChord = false;
+
+    var onDown = function(ev) {
+        isDown = true;
+
+        if (modeEditChord) {
+            var el = ev.target;
+            if (el.getAttribute('class') !== 'playable') { return; }
+
+            var string = parseInt(el.dataset.string, 10);
+            var fret   = parseInt(el.dataset.fret,   10);
+            chord[string] = fret;
+            updateChord(chord);
+        }
+        else {
+            onMove(ev)
+        }
+    };
+
+    var onUp   = function() {
+        isDown = false;
+    };
+
+    var onMove = function(ev) {
+        if (!isDown) { return; }
+
+        var el = ev.target;
+        if (el.getAttribute('class') !== 'playable') { return; }
+
+        var string = parseInt(el.dataset.string, 10);
+        var fret, note;
+
+        if (modeEditChord) {
+            fret = chord[string];
+            note = fretNotes[string][fret];
+        }
+        else {
+            fret = parseInt(el.dataset.fret, 10);
+            note = el.dataset.note;
+        }
+
+        playString(string, fret, note);
+    };
+    var ctn = s.node;
+
+    ctn.addEventListener( HAS_TOUCH ? 'touchstart' : 'mousedown' , onDown);
+    ctn.addEventListener( HAS_TOUCH ? 'touchmove'  : 'mousemove' , onMove);
+    ctn.addEventListener( HAS_TOUCH ? 'touchend'   : 'mouseup'   ,   onUp);
 
 
 
