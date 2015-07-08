@@ -38,7 +38,7 @@
 
     // svg-related
     var s = Snap('svg');
-    var fingerG;
+    var chordG;
 
 
 
@@ -136,14 +136,15 @@
             var stringIdx2 = NUM_STRINGS - stringIdx - 1;
             var v = chord[stringIdx];
             var c = s.select('.chord-' + stringIdx);
-            if (!c && v === 0) { return; }
+
+            if (!c && v === 0) { return; } // doesn't exist and 0, skip
 
             var fretIdx = 0;
             if (c) {
                 parseInt(c.attr('data-fret'), 10);
             }
 
-            if (!c && v === fretIdx) { return; }
+            if (c && v && v === fretIdx) { return; } // exists and has no changes, skip
 
             var x = FRET_W * (v + 0.75);
             var y = STRING_H * (stringIdx2 + 0.5);
@@ -151,9 +152,8 @@
             if (!c) { // create
                 c = s   .circle(x, y, FINGER_R)
                     .attr('fill', '#770000')
-                    .addClass('finger')
                     .addClass('chord-' + stringIdx)
-                    .appendTo(fingerG);
+                    .appendTo(chordG);
             }
             else if (v === 0) { // remove
                 c.remove();
@@ -165,12 +165,20 @@
     };
 
     var drawToggleChordMode = function() {
-        var r = s   .rect(2.5, -10, 5, 5)
-                    .attr('fill', 'red')
-                    .addClass('toggle-chord-mode');
+        var x = FRET_W;
+        var y = -10;
+        var L = 5;
+        var r = s   .rect(x, y, L, L)
+                    .attr('fill', '#994444')
+                    .attr({rx:L/4, ry:L/4});
+        var t = s   .text(x+L*1.25, y+L-L/6, 'finger')
+                    .attr('font-size', L);
+        s.group(r, t).addClass('toggle-chord-mode');
+
         var onToggle = function() {
             modeEditChord = !modeEditChord;
-            r.attr('fill', modeEditChord ? 'green' : 'red');
+            r.attr('fill', modeEditChord ? '#449944' : '#994444');
+            t.attr('text', modeEditChord ? 'chord' : 'finger');
 
             if (!modeEditChord) {
                 seq(NUM_STRINGS).forEach(function(i) { chord[i] = 0; });
@@ -190,7 +198,7 @@
     drawPlayables();
     drawToggleChordMode();
 
-    fingerG = s.group().addClass('fingers');
+    chordG = s.group().addClass('chord');
     updateChord(chord);
 
 
