@@ -208,41 +208,73 @@ window.renderSong = function(o, chosenPartIdx) {
         noteToXLookup[prevNote] = x0;
         noteToXLookup[note] = xc;
         noteToXLookup[nextNote] = x1;
-
-
-
-        var drawStroke = function(note, y0, y1, hand) {
-            var x = noteToXLookup[note];
-            var l = s.line(x, y0, x, y1);
-            l.attr('fill', 'none');
-            l.attr('stroke', COLOR_STROKES[hand]);
-            l.attr('stroke-width', WHITE_GAP*0.9);
-            l.attr('stroke-linejoin', 'round');
-            l.attr('stroke-linecap', 'round');
-        };
-
-        var drawBridge = function(note0, note1, y, hand) {
-            var x0 = noteToXLookup[note0];
-            var x1 = noteToXLookup[note1];
-            var l = s.line(x0, y, x1, y);
-            l.attr('fill', 'none');
-            l.attr('stroke', COLOR_STROKES[hand]);
-            l.attr('stroke-width', WHITE_GAP*0.5);
-            l.attr('stroke-linejoin', 'round');
-            l.attr('stroke-linecap', 'round');
-        };
-
-        var drawTouch = function(note, y, hand) {
-            var x = noteToXLookup[note];
-            var c = s.circle(x, y, WHITE_GAP*0.4);
-            c.attr('fill', COLOR_TOUCHES[hand]);
-        };
-
-        var h = HAND_LEFT;
-        drawStroke('B3', 1, 5, h);
-        drawBridge('B3', 'G3', 1, h);
-        drawTouch('B3', 1, h);
     });
     //console.log(noteToXLookup)
 
+
+
+    var drawStroke = function(note, y0, y1, hand) {
+        var x = noteToXLookup[note];
+        var l = s.line(x, y0, x, y1);
+        l.attr('fill', 'none');
+        l.attr('stroke', COLOR_STROKES[hand]);
+        l.attr('stroke-width', WHITE_GAP*0.8);
+        l.attr('stroke-linejoin', 'round');
+        l.attr('stroke-linecap', 'round');
+    };
+
+    var drawBridge = function(note0, note1, y, hand) {
+        var x0 = noteToXLookup[note0];
+        var x1 = noteToXLookup[note1];
+        var l = s.line(x0, y, x1, y);
+        l.attr('fill', 'none');
+        l.attr('stroke', COLOR_STROKES[hand]);
+        l.attr('stroke-width', WHITE_GAP*0.45);
+        l.attr('stroke-linejoin', 'round');
+        l.attr('stroke-linecap', 'round');
+    };
+
+    var drawTouch = function(note, y, hand) {
+        var x = noteToXLookup[note];
+        var c = s.circle(x, y, WHITE_GAP*0.35);
+        c.attr('fill', COLOR_TOUCHES[hand]);
+    };
+
+
+
+    var y = [1, 1];
+
+    //var h = HAND_LEFT;
+    //drawStroke('B3', 1, 5, h);
+    //drawBridge('B3', 'G3', 1, h);
+    //drawTouch('B3', 1, h);
+
+    //0: R/2 G4/1 G4/1
+    //1: R
+
+    //console.log(chosenPart[0]);
+    var scl = 0.25;
+    chosenPart.forEach(function(m, mi) {
+        m.voices.forEach(function(o, vi) {
+            console.log(mi, vi, o);
+            var yy = y[vi] + (o instanceof Array ? o[0].dur : o.dur) * scl;
+            if (o instanceof Array) {
+                drawBridge(o[0].note, o[o.length-1].note, y[vi], vi);
+                o.forEach(function(O) {
+                    drawStroke(O.note, y[vi], yy, vi);
+                    drawTouch(O.note, y[vi], vi);
+                });
+            }
+            else if ('note' in o) {
+                drawStroke(o.note, y[vi], y[vi] + o.dur, vi);
+                drawTouch(o.note, y[vi], vi);
+            }
+            y[vi] = yy + WHITE_GAP;
+        });
+        var newY = Math.max(y[0], y[1]);
+        y[0] = newY;
+        y[1] = newY;
+    });
+
+    s.node.setAttribute('viewBox', [0, 0, WHITE_GAP*songWhites.length, y[0] + WHITE_GAP/2].join(' '));
 };
