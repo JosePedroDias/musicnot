@@ -6,17 +6,6 @@
 
 
 
-    window.NOTES = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
-
-    var rotL = function(arr) {
-        arr.push( arr.shift() );
-    };
-
-    window.NOTES_STARTING_IN_C = window.NOTES.slice();
-    rotL(window.NOTES_STARTING_IN_C);
-    rotL(window.NOTES_STARTING_IN_C);
-    rotL(window.NOTES_STARTING_IN_C);
-
     var noteToFreq = {};
 
     // note to frequency computation

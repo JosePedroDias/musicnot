@@ -3,23 +3,7 @@ window.parseSong = function(doc) {
 
 
 
-    var listToArr = function(lst) {
-        var l = lst.length;
-        var arr = new Array(l);
-        for (var i = 0; i < l; ++i) {
-            arr[i] = lst[i];
-        }
-        return arr;
-    };
 
-    var valuesOf = function(o) {
-        var arr = [];
-        for (var k in o) {
-            if (!o.hasOwnProperty(k)) { continue; }
-            arr.push(o[k]);
-        }
-        return arr;
-    };
 
     var getEl = function(el, sel) {
         return el.querySelector(sel);

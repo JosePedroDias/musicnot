@@ -2,23 +2,10 @@ window.renderSong = function(o, chosenPartIdx) {
     'use strict';
 
 
-
     var chosenPart = o.parts[chosenPartIdx || 0];
 
 
-
     console.log(o);
-
-
-
-    // generate sequence of integer numbers
-    var seq = function (n) {
-        var arr = new Array(n);
-        for (var i = 0; i < n; ++i) {
-            arr[i] = i;
-        }
-        return arr;
-    };
 
 
 
