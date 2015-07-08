@@ -5,7 +5,11 @@ window.renderSong = function(o, chosenPartIdx) {
     var chosenPart = o.parts[chosenPartIdx || 0];
 
 
-    console.log(o);
+    //console.log(o);
+
+    /*console.log('\n\n');
+    console.log(JSON.stringify(o));
+    console.log('\n\n');*/
 
 
 
@@ -241,22 +245,23 @@ window.renderSong = function(o, chosenPartIdx) {
 
     //console.log(chosenPart[0]);
     var scl = 0.25;
-    chosenPart.forEach(function(m, mi) {
-        m.voices.forEach(function(o, vi) {
-            console.log(mi, vi, o);
-            var yy = y[vi] + (o instanceof Array ? o[0].dur : o.dur) * scl;
-            if (o instanceof Array) {
-                drawBridge(o[0].note, o[o.length-1].note, y[vi], vi);
-                o.forEach(function(O) {
-                    drawStroke(O.note, y[vi], yy, vi);
-                    drawTouch(O.note, y[vi], vi);
-                });
-            }
-            else if ('note' in o) {
-                drawStroke(o.note, y[vi], y[vi] + o.dur, vi);
-                drawTouch(o.note, y[vi], vi);
-            }
-            y[vi] = yy + WHITE_GAP;
+    chosenPart.forEach(function(m, mi) { // each measure
+        m.voices.forEach(function(v, vi) { // each voice
+            v.forEach(function(o) { // each voice item
+                var yy = y[vi] + (o instanceof Array ? o[0].dur : o.dur) * scl;
+                if (o instanceof Array) {
+                    drawBridge(o[0].note, o[o.length-1].note, y[vi], vi);
+                    o.forEach(function(O) {
+                        drawStroke(O.note, y[vi], yy, vi);
+                        drawTouch(O.note, y[vi], vi);
+                    });
+                }
+                else if ('note' in o) {
+                    drawStroke(o.note, y[vi], y[vi] + o.dur, vi);
+                    drawTouch(o.note, y[vi], vi);
+                }
+                y[vi] = yy + WHITE_GAP;
+            });
         });
         var newY = Math.max(y[0], y[1]);
         y[0] = newY;

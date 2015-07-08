@@ -60,7 +60,7 @@ window.parseSong = function(doc) {
 
         var measureEls = getEls(partEl, 'measure');
         measureEls.forEach(function(measureEl) {
-            var m = {voices:[]};
+            var m = {voices:{}};
 
             var attributesEl = getEl(measureEl, 'attributes time');
             if (attributesEl) {
