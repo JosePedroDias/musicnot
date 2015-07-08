@@ -157,11 +157,9 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
 
+    // fill noteToXLookup
     var noteToXLookup = {};
-    var bgGroup = s.group();
     songWhites.forEach(function(note, idx) {
-        var h = 10;
-
         var x0 = idx * WHITE_GAP;
         var xc = x0 + WHITE_GAP / 2;
         var x1 = x0 + WHITE_GAP;
@@ -169,33 +167,6 @@ window.renderSong = function(o, chosenPartIdx) {
         var prevNote = bemolToSustained(note);
         var nextNote = flatToSustained(note);
 
-        var r = s.rect(x0, 0, WHITE_GAP, h);
-        r.attr('fill', COLOR_WHITE);
-
-        var letter = note[0];
-
-        var isC = (letter === 'C');
-
-        var g = r;
-        if (isC) {
-            var r2 = s.rect(x0, 0, WHITE_GAP, h);
-            r2.attr('fill', hatch);
-            g = s.group(r, r2);
-        }
-        g.addClass('flat-note');
-        g.addClass(note);
-        bgGroup.add(g);
-
-        if (haveSustainedAfter.indexOf(letter) !== -1) {
-            var l = s.line(x1, 0, x1, h);
-            l.attr('stroke', isC ? COLOR_MEDIUM_GRAY : COLOR_LIGHT_GRAY);
-            l.attr('stroke-width', isC ? 0.5 : 0.33);
-            l.addClass('sustained-note');
-            l.addClass(nextNote);
-            bgGroup.add(l);
-        }
-
-        //console.log(prevNote, note, nextNote);
         noteToXLookup[prevNote] = x0;
         noteToXLookup[note] = xc;
         noteToXLookup[nextNote] = x1;
@@ -206,67 +177,115 @@ window.renderSong = function(o, chosenPartIdx) {
 
     var drawStroke = function(note, y0, y1, hand) {
         var x = noteToXLookup[note];
-        var l = s.line(x, y0, x, y1);
-        l.attr('fill', 'none');
-        l.attr('stroke', COLOR_STROKES[hand]);
-        l.attr('stroke-width', WHITE_GAP*0.8);
-        l.attr('stroke-linejoin', 'round');
-        l.attr('stroke-linecap', 'round');
+        return s   .line(x, y0, x, y1)
+                    .attr('fill', 'none')
+                    .attr('stroke', COLOR_STROKES[hand])
+                    .attr('stroke-width', WHITE_GAP*0.8)
+                    .attr('stroke-linejoin', 'round')
+                    .attr('stroke-linecap', 'round');
     };
 
     var drawBridge = function(note0, note1, y, hand) {
         var x0 = noteToXLookup[note0];
         var x1 = noteToXLookup[note1];
-        var l = s.line(x0, y, x1, y);
-        l.attr('fill', 'none');
-        l.attr('stroke', COLOR_STROKES[hand]);
-        l.attr('stroke-width', WHITE_GAP*0.45);
-        l.attr('stroke-linejoin', 'round');
-        l.attr('stroke-linecap', 'round');
+        return s   .line(x0, y, x1, y)
+                    .attr('fill', 'none')
+                    .attr('stroke', COLOR_STROKES[hand])
+                    .attr('stroke-width', WHITE_GAP*0.45)
+                    .attr('stroke-linejoin', 'round')
+                    .attr('stroke-linecap', 'round');
     };
 
     var drawTouch = function(note, y, hand) {
         var x = noteToXLookup[note];
-        var c = s.circle(x, y, WHITE_GAP*0.35);
-        c.attr('fill', COLOR_TOUCHES[hand]);
+        return s   .circle(x, y, WHITE_GAP*0.35)
+                    .attr('fill', COLOR_TOUCHES[hand]);
+    };
+
+    var drawMeasureLine = function(y) {
+        y -= WHITE_GAP/2;
+        return s   .line(0, y, WHITE_GAP*songWhites.length, y)
+                    .attr('stroke', COLOR_DARK_GRAY)
+                    .attr('stroke-width', 0.1);
     };
 
 
 
     var y = [1, 1];
 
-    //var h = HAND_LEFT;
-    //drawStroke('B3', 1, 5, h);
-    //drawBridge('B3', 'G3', 1, h);
-    //drawTouch('B3', 1, h);
-
-    //0: R/2 G4/1 G4/1
-    //1: R
-
-    //console.log(chosenPart[0]);
-    var scl = 0.25;
-    chosenPart.forEach(function(m, mi) { // each measure
+    var bgGroup = s.group().addClass('bg');
+    var fgGroup = s.group().addClass('fg');
+    chosenPart.forEach(function(m) { // each measure
         m.voices.forEach(function(v, vi) { // each voice
             v.forEach(function(o) { // each voice item
-                var yy = y[vi] + (o instanceof Array ? o[0].dur : o.dur) * scl;
+                var y0 = y[vi];
+                var dy = ( (o instanceof Array ? o[0].dur : o.dur) - 1) * WHITE_GAP;
+                var y1 = y0 + dy;
+                //console.log(vi, o);
+                //console.log(y0, dy, y1);
                 if (o instanceof Array) {
-                    drawBridge(o[0].note, o[o.length-1].note, y[vi], vi);
+                    fgGroup.add( drawBridge(o[0].note, o[o.length-1].note, y0, vi) );
                     o.forEach(function(O) {
-                        drawStroke(O.note, y[vi], yy, vi);
-                        drawTouch(O.note, y[vi], vi);
+                        drawStroke(O.note, y0, y1, vi);
+                        drawTouch(O.note, y0, vi);
                     });
                 }
                 else if ('note' in o) {
-                    drawStroke(o.note, y[vi], y[vi] + o.dur, vi);
-                    drawTouch(o.note, y[vi], vi);
+                    fgGroup.add( drawStroke(o.note, y0, y1, vi) );
+                    fgGroup.add( drawTouch(o.note, y0, vi) );
                 }
-                y[vi] = yy + WHITE_GAP;
+                y[vi] += dy + WHITE_GAP;
             });
         });
         var newY = Math.max(y[0], y[1]);
         y[0] = newY;
         y[1] = newY;
+        fgGroup.add( drawMeasureLine(newY) );
     });
 
-    s.node.setAttribute('viewBox', [0, 0, WHITE_GAP*songWhites.length, y[0] + WHITE_GAP/2].join(' '));
+    var H = y[0];
+
+
+
+    // draw bg
+    songWhites.forEach(function(note, idx) {
+        var x0 = idx * WHITE_GAP;
+        var xc = x0 + WHITE_GAP / 2;
+        var x1 = x0 + WHITE_GAP;
+
+        var nextNote = flatToSustained(note);
+
+        var r = s   .rect(x0, 0, WHITE_GAP, H)
+            .attr('fill', COLOR_WHITE);
+
+        var letter = note[0];
+
+        var isC = (letter === 'C');
+
+        var g = r;
+        if (isC) {
+            var r2 = s  .rect(x0, 0, WHITE_GAP, H)
+                .attr('fill', hatch);
+            var t = s   .text(xc, 0, note)
+                .attr('text-anchor', 'middle')
+                .attr('font-size', WHITE_GAP/2);
+            g = s.group(r, r2, t);
+        }
+        g   .addClass('flat-note')
+            .addClass(note);
+        bgGroup.add(g);
+
+        if (haveSustainedAfter.indexOf(letter) !== -1) {
+            var l = s   .line(x1, 0, x1, H)
+                .attr('stroke', isC ? COLOR_MEDIUM_GRAY : COLOR_LIGHT_GRAY)
+                .attr('stroke-width', isC ? 0.5 : 0.33)
+                .addClass('sustained-note')
+                .addClass(nextNote);
+            bgGroup.add(l);
+        }
+    });
+
+
+
+    s.node.setAttribute('viewBox', [0, -WHITE_GAP/2, WHITE_GAP*songWhites.length, y[0] + WHITE_GAP/2].join(' '));
 };
