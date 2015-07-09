@@ -91,6 +91,7 @@ window.parseSong = function(doc) {
                 if (pitchEl) {
                     var acci, alter = getText(pitchEl, 'alter');
                     if (isFinite(alter)) {
+                        alter = parseInt(alter, 10);
                         if      (alter ===  1) { acci = '#';  }
                         else if (alter ===  2) { acci = '##'; }
                         else if (alter === -1) { acci = 'b';  }

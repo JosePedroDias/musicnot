@@ -232,12 +232,14 @@ window.renderSong = function(o, chosenPartIdx) {
                 if (o instanceof Array) {
                     fgGroup.add( drawBridge(o[0].note, o[o.length-1].note, y0, vi) );
                     o.forEach(function(O) {
+                        //console.log(O.note);
                         //if (!('note' in O)) { debugger; }
                         fgGroup.add( drawStroke(O.note, y0, y1, vi) );
                         fgGroup.add( drawTouch(O.note, y0, vi) );
                     });
                 }
                 else if ('note' in o) {
+                    //console.log(o.note);
                     fgGroup.add( drawStroke(o.note, y0, y1, vi) );
                     fgGroup.add( drawTouch(o.note, y0, vi) );
                 }
@@ -249,7 +251,7 @@ window.renderSong = function(o, chosenPartIdx) {
         fgGroup.add( drawMeasureLine(newY) );
     });
 
-    var H = y[0];
+    var H = y[0] - WHITE_GAP/2;
 
 
 
@@ -274,7 +276,8 @@ window.renderSong = function(o, chosenPartIdx) {
                 .attr('fill', hatch);
             var t = s   .text(xc, 0, note)
                 .attr('text-anchor', 'middle')
-                .attr('font-size', WHITE_GAP/2);
+                .attr('font-size',   WHITE_GAP/2)
+                .attr('font-family', 'sans-serif');
             g = s.group(r, r2, t);
         }
         g   .addClass('flat-note')

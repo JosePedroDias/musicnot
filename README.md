@@ -65,7 +65,7 @@ voices in the same measure use the same instrument, are implicitly in the same p
 - `common.js` - some code user several times
 - `getMusicXMLFromInput.js` - reads file from user. supports both XML and MXL zipped MusicXML files. returns XML document on cb
 - `saveSVG.js` - creates data URI from SVG on the page. downloads it via A element which is created and clicked
-- `generator.js` - generates sounds using webaudio
+- `generator.js` - generates sounds using WebAudio
 - `parseSong.js` - parse relevant song structure from XML document
 - `playSong.js` - plays the chosen song based on parsed song structure and using generators above 
 - `renderSong.js` - renders visual representation for the music score with SVG based on parsed song structure
@@ -87,6 +87,11 @@ voices in the same measure use the same instrument, are implicitly in the same p
 - [x] example displaying local musicxml files to simplify demo for new users
 - [x] save SVG/print support
 - [x] request user to choose which part to render
-- [ ] filter out measures with no info for the chosen part!
+- [ ] summarize content in height:
+    - [] filter out measures with no info for the chosen part
+    - [] reduce duration of notes keeping relative parallelism
+- [ ] alternate headers for guitar, base, drums
+- [ ] alternate color scheme for guitar/base (lowest string which has the note) and drums (cluster by type: hihat, kicks, snares, toms, etc.)
 - [ ] smart criteria for clustering notes between left/right hand
 - [ ] support for multiple voices playback
+- [ ] test webMIDI playback instead of WebAudio

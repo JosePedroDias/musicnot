@@ -21,6 +21,11 @@ label {
     bottom: 0;
 }
 
+.loading-on svg,
+.loading-on .ribbon {
+    display: none;
+}
+
 .loading-on .loading {
     display: block;
     position: fixed;
