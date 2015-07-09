@@ -14,44 +14,9 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
     // generate maximum possible scale
-    var generateScale = function(minOctave, maxOctave) {
-        var scale = [];
-        seq(maxOctave - minOctave + 1).forEach(function(i) {
-            var octave = i + minOctave;
-            window.NOTES_STARTING_IN_C.forEach(function(note) {
-                scale.push( note + octave );
-            });
-        });
-        return scale;
-    };
+
     var SCALES1TO8 = generateScale(1, 8);
     //console.log(scale);
-
-
-
-    var bemolToSustained = function(note) { // bemol is assumed but may not be in string
-        var parts = note.split('');
-        var octave = parseInt(parts.pop(), 10);
-        var letter = parts.shift();
-
-        var letters = 'CDEFGAB';
-        var l0 = letters[ letters.indexOf(letter) - 1 ];
-
-        if (l0) {
-            return [l0, '#', octave].join('');
-        }
-        return ['G#', octave-1].join('');
-    };
-
-    var flatToSustained = function(note) {
-        return note[0] + '#' + note[1];
-    };
-
-
-
-    var getNoteOctave = function(note) {
-        return parseInt(note[note.length - 1], 10);
-    };
 
 
 
@@ -164,8 +129,8 @@ window.renderSong = function(o, chosenPartIdx) {
         var xc = x0 + WHITE_GAP / 2;
         var x1 = x0 + WHITE_GAP;
 
-        var prevNote = bemolToSustained(note);
-        var nextNote = flatToSustained(note);
+        var prevNote = getPrevNote(note);
+        var nextNote = getNextNote(note);
 
         noteToXLookup[prevNote] = x0;
         noteToXLookup[note] = xc;
@@ -261,8 +226,6 @@ window.renderSong = function(o, chosenPartIdx) {
         var xc = x0 + WHITE_GAP / 2;
         var x1 = x0 + WHITE_GAP;
 
-        var nextNote = flatToSustained(note);
-
         var r = s   .rect(x0, 0, WHITE_GAP, H)
             .attr('fill', COLOR_WHITE);
 
@@ -289,7 +252,7 @@ window.renderSong = function(o, chosenPartIdx) {
                 .attr('stroke', isC ? COLOR_MEDIUM_GRAY : COLOR_LIGHT_GRAY)
                 .attr('stroke-width', isC ? 0.5 : 0.33)
                 .addClass('sustained-note')
-                .addClass(nextNote);
+                .addClass( getNextNote(note) );
             bgGroup.add(l);
         }
     });

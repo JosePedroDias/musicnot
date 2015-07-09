@@ -1,0 +1,29 @@
+{
+  "name": "musicnot",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "phantomjs": "latest",
+    "mocha-phantomjs": "latest",
+    "node-static": "latest"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "static":   "static -c 0 -p 63342 > /dev/null &",
+    "tdd":      "mocha-phantomjs http://localhost:63342/epg/test/unit/MeoEpgProvider.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JosePedroDias/musicnot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosePedroDias/musicnot/issues"
+  },
+  "homepage": "https://github.com/JosePedroDias/musicnot"
+}

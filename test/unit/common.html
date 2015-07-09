@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TDD - common</title>
+        <link rel="stylesheet" href="../../vendor/mocha.css" />
+    </head>
+
+    <body>
+        <div id="mocha"></div>
+
+
+
+        <!-- STUFF TO TEST-RELATED -->
+
+        <script src="../../common.js"></script>
+
+
+
+        <!-- MOCHA-RELATED -->
+
+        <script src="../../vendor/mocha.js"></script>
+        <script src="../../vendor/chai.js"></script>
+
+        <script>mocha.setup('tdd')</script>
+
+        <script src="common.js"></script>
+
+        <script>
+            mocha.checkLeaks();
+            mocha.globals([]);
+
+            if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+            else {                                mocha.run(); }
+        </script>
+    </body>
+</html>

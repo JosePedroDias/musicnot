@@ -113,7 +113,7 @@
                 /*var y = STRING_H * stringIdx; // MODE FULL RECT
                 s   .rect(x, y, FRET_W, STRING_H)*/
 
-                var note = getNoteDiff(GUITAR_NOTES[stringIdx2], fretIdx);
+                var note = applyNoteDelta(GUITAR_NOTES[stringIdx2], fretIdx);
 
                 fretNotes[stringIdx2].push(note);
 
