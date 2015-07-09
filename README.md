@@ -16,7 +16,20 @@ Used the [musescore sheetmusic database](https://musescore.com/sheetmusic) to fe
 I ended up parsing the MusicXML file to a simpler format and playing it back naively with WebAudio.
 Kinda works in a modular way, though it relies on setInterval so far O:)
 
-Next I'm generating the SVG visualization from the parsed song files next!
+Now for the score rendering part: I managed to summarize the most relevant features of MusicXML for this task -
+it may not work for very complex songs though.
+
+It focuses on a part of the song (in MIDI/MusicXML terms this means one instrument/track).
+For now it is choosing the first one but the user can choose which one.
+
+Further improvements:
+
+* attempt to elect which notes to play with the left and right hands.
+For now this feature is relying on voice segmentation (first voice in measure is left, remaining are right).
+
+* (nice to have) summarize note durations/height with a criteria to reduce score height
+
+* (nice to have) segment score in pages
 
 
 
@@ -51,6 +64,7 @@ voices in the same measure use the same instrument, are implicitly in the same p
 
 - `common.js` - some code user several times
 - `getMusicXMLFromInput.js` - reads file from user. supports both XML and MXL zipped MusicXML files. returns XML document on cb
+- `saveSVG.js` - creates data URI from SVG on the page. downloads it via A element which is created and clicked
 - `generator.js` - generates sounds using webaudio
 - `parseSong.js` - parse relevant song structure from XML document
 - `playSong.js` - plays the chosen song based on parsed song structure and using generators above 
@@ -71,6 +85,7 @@ voices in the same measure use the same instrument, are implicitly in the same p
 - [x] using generator to play a song (just the selected part, first voice)
 - [x] SVG visualization of a part based on song data
 - [x] example displaying local musicxml files to simplify demo for new users
+- [x] save SVG/print support
+- [ ] request user to choose which part to render
 - [ ] smart criteria for clustering notes between left/right hand
 - [ ] support for multiple voices playback
-- [ ] save SVG/print support

@@ -22,6 +22,9 @@
             <br/>
             <label for="file-input">your MusicXML song:</label>
             <input type="file" id="file-input">
+            <br/>
+            <button id="print" onclick="window.print()">print score</button>
+            <button id="save"  onclick="saveSVG(songTitle, document.querySelector('.form'))">save score</button>
         </div>
 
         <div class="credits">
@@ -33,7 +36,7 @@
         </a>
 
         <div class="loading">
-            loading...
+            rendering score...
         </div>
 
         <script src="common.js"></script>
@@ -46,6 +49,7 @@
         <!-- svg and score rendering -->
         <script src="vendor/snap.svg-min.js"></script>
         <script src="renderSong.js"></script>
+        <script src="saveSVG.js"></script>
 
         <!-- audio - sfx and sequencer -->
         <script src="generator.js"></script>
@@ -62,6 +66,8 @@
                     // TODO: let user choose part to render/play
                     //playSong(song, 0);
                     renderSong(song, 0);
+                    document.querySelector('#print').style.display = 'block';
+                    document.querySelector('#save' ).style.display = 'block';
                     document.body.className = '';
                 }, 0);
             };
@@ -70,7 +76,8 @@
             // source alternative one: samples
             document.querySelector('.samples').addEventListener('click', function(ev) {
                 var el = ev.target;
-                var name = el.innerHTML.replace(/ /g, '_');
+                window.songTitle = el.innerHTML;
+                name = window.songTitle.replace(/ /g, '_');
                 ajax({
                     uri: 'songs/' + name + '.xml',
                     cb: function(err, doc) {

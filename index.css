@@ -1,21 +1,7 @@
-/*html, body {
-    height: 100%;
-}*/
-
 body {
-    /*overflow: hidden;*/
-
     font-family: sans-serif;
     background-color: #b2bad1;
 }
-
-/*svg {
-    position: fixed;
-    left: 0;
-    top:  0;
-    width:  100%;
-    height: 100%;
-}*/
 
 label {
     font-weight: bold;
@@ -34,7 +20,6 @@ label {
     left:   0;
     bottom: 0;
 }
-
 
 .loading-on .loading {
     display: block;
@@ -70,4 +55,31 @@ label {
 
 .ribbon:hover {
     opacity: 1;
+}
+
+#print, #save {
+    display: none;
+}
+
+@media print {
+    .form, .credits, .ribbon {
+        display: none;
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        background-color: #FFFFFF;
+        overflow: hidden;
+    }
+
+    svg {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
