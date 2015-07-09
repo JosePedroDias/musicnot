@@ -232,4 +232,4 @@
         return note;
     };
 
-})(this);
+})( (typeof module !== 'undefined' && module.exports) ? global : this ); // to set global stuff on node and browser

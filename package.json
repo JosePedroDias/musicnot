@@ -7,14 +7,17 @@
   "devDependencies": {
     "phantomjs": "latest",
     "mocha-phantomjs": "latest",
-    "node-static": "latest"
+    "node-static": "latest",
+    "chai": "latest",
+    "mocha": "latest"
   },
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "static":   "static -c 0 -p 63342 > /dev/null &",
-    "tdd":      "mocha-phantomjs http://localhost:63342/epg/test/unit/MeoEpgProvider.html"
+    "static": "static -c 0 -p 63342 > /dev/null &",
+    "tdd": "mocha -u tdd test/unit/common.js",
+    "tdd2": "mocha-phantomjs http://localhost:63342/musicnot/test/unit/common.html"
   },
   "repository": {
     "type": "git",
