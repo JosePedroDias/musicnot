@@ -61,6 +61,7 @@
                     }
                 });
 
+                inputEl.disabled = false;
                 //console.log('found', entry);
                 model.getEntryFile(entry, parseMusicXMLFile);
             });

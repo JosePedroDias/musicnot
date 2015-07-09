@@ -69,5 +69,8 @@ voices in the same measure use the same instrument, are implicitly in the same p
 - [x] support for MusicXML file reading, both directly (xml) and zip (mxl)
 - [x] parsing of relevant song data from MusicXML
 - [x] using generator to play a song (just the selected part, first voice)
+- [x] SVG visualization of a part based on song data
+- [x] example displaying local musicxml files to simplify demo for new users
+- [ ] smart criteria for clustering notes between left/right hand
 - [ ] support for multiple voices playback
-- [ ] SVG visualization of a part based on song data
+- [ ] save SVG/print support

@@ -28,13 +28,21 @@
         return arr;
     };
 
-    w.seqInv = function(n) {
+    w.times = function(n, v) {
         var arr = new Array(n);
         for (var i = 0; i < n; ++i) {
-            arr[i] = n - i - 1;
+            arr[i] = v;
         }
         return arr;
     };
+
+    w.setAllElements = function(arr, v) {
+        for (var i = 0, l = arr.length; i < l; ++i) {
+            arr[i] = v;
+        }
+    };
+
+
 
     w.rndInt = function(n) {
         return Math.floor( Math.random() * n );
@@ -44,6 +52,8 @@
         return ['rgb(', w.rndInt(256), ',', w.rndInt(256), ',', w.rndInt(256), ')'].join('');
     };
 
+
+
     w.mapAdd = function(arr, diff) {
         return arr.map(function(num) {
             return num + diff;
@@ -52,6 +62,20 @@
 
     w.elInArr = function(el, arr) {
         return arr.indexOf(el) !== -1;
+    };
+
+    w.ajax = function(o) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', o.uri, true);
+        var cbInner = function() {
+            if (xhr.readyState === 4 && xhr.status > 199 && xhr.status < 300) {
+                return o.cb(null, xhr.responseXML);
+            }
+            o.cb('error requesting ' + o.uri);
+        };
+        xhr.onload  = cbInner;
+        xhr.onerror = cbInner;
+        xhr.send(null);
     };
 
 

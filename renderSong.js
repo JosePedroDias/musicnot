@@ -108,7 +108,7 @@ window.renderSong = function(o, chosenPartIdx) {
         return notesInSong;
     };
     var notesInSong = findNotes(chosenPart);
-    console.log('notesInSong', notesInSong);
+    //console.log('notesInSong', notesInSong);
     var minNote = notesInSong[0];
     var maxNote = notesInSong[notesInSong.length - 1];
     //console.log(minNote, maxNote);
@@ -177,6 +177,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
     var drawStroke = function(note, y0, y1, hand) {
         var x = noteToXLookup[note];
+        //if (!isFinite(x)) { throw 'drawStroke error: ' + note; }
         return s   .line(x, y0, x, y1)
                     .attr('fill', 'none')
                     .attr('stroke', COLOR_STROKES[hand])
@@ -187,7 +188,9 @@ window.renderSong = function(o, chosenPartIdx) {
 
     var drawBridge = function(note0, note1, y, hand) {
         var x0 = noteToXLookup[note0];
+        //if (!isFinite(x0)) { throw 'drawBridge error: ' + note0; }
         var x1 = noteToXLookup[note1];
+        //if (!isFinite(x1)) { throw 'drawBridge error: ' + note1; }
         return s   .line(x0, y, x1, y)
                     .attr('fill', 'none')
                     .attr('stroke', COLOR_STROKES[hand])
@@ -198,6 +201,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
     var drawTouch = function(note, y, hand) {
         var x = noteToXLookup[note];
+        //if (!isFinite(x)) { throw 'drawTouch error: ' + note; }
         return s   .circle(x, y, WHITE_GAP*0.35)
                     .attr('fill', COLOR_TOUCHES[hand]);
     };
@@ -211,23 +215,26 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
 
-    var y = [1, 1];
+    var y = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // TODO: max num of voices should be detected apriori
 
     var bgGroup = s.group().addClass('bg');
     var fgGroup = s.group().addClass('fg');
     chosenPart.forEach(function(m) { // each measure
         m.voices.forEach(function(v, vi) { // each voice
+            //if (vi > 1) { debugger; throw 'too many voices'; }
+            if (vi > 1) { vi = 1; } // TODO CRITERIA FOR CHOOSING HANDS!
             v.forEach(function(o) { // each voice item
                 var y0 = y[vi];
                 var dy = ( (o instanceof Array ? o[0].dur : o.dur) - 1) * WHITE_GAP;
                 var y1 = y0 + dy;
+                if (!isFinite(y0)) { throw ''}
                 //console.log(vi, o);
-                //console.log(y0, dy, y1);
                 if (o instanceof Array) {
                     fgGroup.add( drawBridge(o[0].note, o[o.length-1].note, y0, vi) );
                     o.forEach(function(O) {
-                        drawStroke(O.note, y0, y1, vi);
-                        drawTouch(O.note, y0, vi);
+                        //if (!('note' in O)) { debugger; }
+                        fgGroup.add( drawStroke(O.note, y0, y1, vi) );
+                        fgGroup.add( drawTouch(O.note, y0, vi) );
                     });
                 }
                 else if ('note' in o) {
@@ -237,9 +244,8 @@ window.renderSong = function(o, chosenPartIdx) {
                 y[vi] += dy + WHITE_GAP;
             });
         });
-        var newY = Math.max(y[0], y[1]);
-        y[0] = newY;
-        y[1] = newY;
+        var newY = Math.max.apply(null, y);
+        setAllElements(y, newY);
         fgGroup.add( drawMeasureLine(newY) );
     });
 
