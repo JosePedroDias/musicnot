@@ -57,15 +57,35 @@
 
         <script>
             var onMusicXMLDoc = function(doc) {
+                // about to load
                 document.querySelector('svg').innerHTML = '';
                 window.scrollTo(0, 0);
                 document.body.className = 'loading-on';
 
                 setTimeout(function() {
                     var song = parseSong(doc);
-                    // TODO: let user choose part to render/play
-                    //playSong(song, 0);
-                    renderSong(song, 0);
+                    console.log(song);
+
+                    // choose part to render and play
+                    var partIdx = 0;
+                    if (song.partList.length > 1) {
+                        var info = [
+                            'Choose part to render:',
+                        ];
+                        song.partList.forEach(function(pl, i) {
+                            info.push('#' + i + ': ' + (pl.name || '?'));
+                        });
+                        info = info.join('\n');
+                        var answer = window.prompt(info, partIdx);
+                        if (isFinite(answer)) {
+                            partIdx = parseInt(answer, 10);
+                        }
+                    }
+
+                    //playSong(song, partIdx);
+                    renderSong(song, partIdx);
+
+                    // loading done
                     document.querySelector('#print').style.display = 'block';
                     document.querySelector('#save' ).style.display = 'block';
                     document.body.className = '';

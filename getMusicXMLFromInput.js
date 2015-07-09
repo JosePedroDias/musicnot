@@ -44,6 +44,14 @@
             inputEl.disabled = true;
             var file0 = inputEl.files[0];
 
+            // set title from received file
+            var songTitle = file0.name;
+            var lastDotIdx = songTitle.lastIndexOf('.');
+            if (lastDotIdx !== -1) {
+                songTitle = songTitle.substring(0, lastDotIdx);
+            }
+            window.songTitle = songTitle;
+
             //console.log('received file:', file0.name);
 
             if (isXmlFileNotMeta(file0.name)) {

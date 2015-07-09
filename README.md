@@ -86,6 +86,7 @@ voices in the same measure use the same instrument, are implicitly in the same p
 - [x] SVG visualization of a part based on song data
 - [x] example displaying local musicxml files to simplify demo for new users
 - [x] save SVG/print support
-- [ ] request user to choose which part to render
+- [x] request user to choose which part to render
+- [ ] filter out measures with no info for the chosen part!
 - [ ] smart criteria for clustering notes between left/right hand
 - [ ] support for multiple voices playback
