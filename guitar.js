@@ -101,6 +101,8 @@
         });
     };
 
+    var SCALES3TO6 = generateScale(3, 6);
+
     var drawPlayables = function() {
         var g = s   .group()
                     .addClass('playables');
@@ -113,7 +115,7 @@
                 /*var y = STRING_H * stringIdx; // MODE FULL RECT
                 s   .rect(x, y, FRET_W, STRING_H)*/
 
-                var note = applyNoteDelta(GUITAR_NOTES[stringIdx2], fretIdx);
+                var note = shiftNote(GUITAR_NOTES[stringIdx2], fretIdx, SCALES3TO6);
 
                 fretNotes[stringIdx2].push(note);
 
