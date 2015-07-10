@@ -87,8 +87,8 @@ voices in the same measure use the same instrument, are implicitly in the same p
 - [x] example displaying local musicxml files to simplify demo for new users
 - [x] save SVG/print support
 - [x] request user to choose which part to render
-- [ ] test and fix some lame problems
-    - [ ] Cb should be B and B# C. currently rendering some impossible notes, I think
+- [x] test and fix some lame problems
+    - [x] Cb should be B and B# C. currently rendering some impossible notes, I think
     - [ ] Drum parts are not being rendered yet. different note scheme?
 - [ ] summarize content in height:
     - [ ] filter out measures with no info for the chosen part
