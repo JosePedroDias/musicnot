@@ -7,6 +7,10 @@ suite('common', function() {
 
 
 
+    var SCALES1TO8 = generateScale(1, 8);
+
+
+
     var assert = require('assert');
     //var assert = chai.assert;
 
@@ -25,14 +29,22 @@ suite('common', function() {
 
     test('getNextNote', function() {
         assert.equal( getNextNote('Cb4'), 'C4'  );
-        assert.equal( getNextNote('B3'),  'C4' );
+        assert.equal( getNextNote('B3'),  'C4'  );
         assert.equal( getNextNote('C3'),  'C#3' );
+        //assert.equal( getPrevNote('C3#'), 'D3'  );
     });
 
     test('getPrevNote', function() {
+        assert.equal( getPrevNote('C4'),  'B3' );
+        assert.equal( getPrevNote('C#3'), 'C3' );
         //assert.equal( getPrevNote('Cb4'), 'C4'  );
-        //assert.equal( getPrevNote('B3'),  'C4' );
-        //assert.equal( getPrevNote('C3'),  'C#3' );
+    });
+
+    test('shiftNote', function() {
+        assert.equal( shiftNote('C3',  1, SCALES1TO8) , 'C#3' );
+        assert.equal( shiftNote('C3',  2, SCALES1TO8) , 'D3'  );
+        assert.equal( shiftNote('C#3', 3, SCALES1TO8) , 'E3'  );
+        assert.equal( shiftNote('D4', -3, SCALES1TO8) , 'B3'  );
     });
 
 });

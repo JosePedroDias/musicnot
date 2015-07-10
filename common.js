@@ -222,7 +222,7 @@
         return w.getNoteSynomym(o);
     };
 
-    w.shiftNote = function(note, delta) {
+    /*w.shiftNote = function(note, delta) {
         var fn = (delta < 0) ? w.getPrevNote : w.getNextNote;
         var incr = (delta < 0) ? -1 : 1;
         while (delta !== 0) {
@@ -230,6 +230,10 @@
             delta += incr;
         }
         return note;
+    };*/
+
+    w.shiftNote = function(note, delta, scale) {
+        return scale[ scale.indexOf(note) + delta];
     };
 
 })( (typeof module !== 'undefined' && module.exports) ? global : this ); // to set global stuff on node and browser

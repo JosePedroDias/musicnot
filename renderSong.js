@@ -27,7 +27,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
         n = SCALES1TO8.indexOf(note);
         if (n === -1) {
-            var note2 = bemolToSustained(note);
+            var note2 = getNoteSynomym(note);
             n = SCALES1TO8.indexOf(note2);
             if (n === -1) { throw 'oops!'; }
         }
@@ -62,7 +62,7 @@ window.renderSong = function(o, chosenPartIdx) {
         var notesInSong = Object.keys(foundNotes);
 
         notesInSong = notesInSong.map(function(note) { // sustaineds to bemols
-            return ( (note.indexOf('b') === -1) ? note : bemolToSustained(note) );
+            return ( (note.indexOf('b') === -1) ? note : getNoteSynomym(note) );
         });
         notesInSong.sort(function(a, b) {
             a = noteIndexInScale(a);
@@ -118,23 +118,13 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
 
-    var haveSustainedAfter = ['C', 'D', /**/ 'F', 'G', 'A'];
-
-
-
     // fill noteToXLookup
     var noteToXLookup = {};
     songWhites.forEach(function(note, idx) {
-        var x0 = idx * WHITE_GAP;
-        var xc = x0 + WHITE_GAP / 2;
-        var x1 = x0 + WHITE_GAP;
-
-        var prevNote = getPrevNote(note);
+        var xc = (idx + 0.5) * WHITE_GAP;
         var nextNote = getNextNote(note);
-
-        noteToXLookup[prevNote] = x0;
         noteToXLookup[note] = xc;
-        noteToXLookup[nextNote] = x1;
+        noteToXLookup[nextNote] = xc + (HAS_SUSTAINED[nextNote] ? 1 : 0.5) * WHITE_GAP;
     });
     //console.log(noteToXLookup)
 
@@ -247,7 +237,7 @@ window.renderSong = function(o, chosenPartIdx) {
             .addClass(note);
         bgGroup.add(g);
 
-        if (haveSustainedAfter.indexOf(letter) !== -1) {
+        if (HAS_SUSTAINED[letter]) {
             var l = s   .line(x1, 0, x1, H)
                 .attr('stroke', isC ? COLOR_MEDIUM_GRAY : COLOR_LIGHT_GRAY)
                 .attr('stroke-width', isC ? 0.5 : 0.33)
