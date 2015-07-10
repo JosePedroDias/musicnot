@@ -107,6 +107,16 @@ window.parseSong = function(doc) {
                         getText(pitchEl, 'octave')
                     ].join('');
                 }
+                /*else {
+                    var unpitchedEl = getEl(noteEl, 'unpitched');
+                    if (unpitchedEl) {
+                        n.note = [
+                            getText(unpitchedEl, 'display-step'),
+                            '', // TODO: has accidentals?
+                            getText(unpitchedEl, 'display-octave')
+                        ].join('');
+                    }
+                }*/
 
                 var voice = getNum(noteEl, 'voice');
 
