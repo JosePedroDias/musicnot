@@ -1,0 +1,171 @@
+X:1
+T:Paranoid
+T:Geezer Butler
+%%score 1 2 3 4
+L:1/8
+Q:1/4=164
+M:4/4
+I:linebreak $
+K:Gmaj
+V:1 treble nm="Ozzy Osbourne"
+%%MIDI program 85
+L:1/4
+V:2 treble-8 m=B, nm="Tony Iommi"
+%%MIDI program 30
+V:3 bass-8 m=D,, nm="Geezer Butler"
+%%MIDI program 33
+V:4  nm="Bill Ward"
+%%MIDI program 0
+L:1/4
+V:1
+ z z3 | z z3 | z z3 |$ z z3 | z z3 | z z3 |$ z z3 | z z3 || G/ G G G G/- | G/ E3/2 E E |$ %10
+ D/ D D F3/2 | G/ D3/2 E z | G/ G G G G/- | G/ E3/2 E E | D/ D D F3/2 |$ G/ D3/2 E z | z z3 | %17
+ z z3 | z z3 | z z3 |$ z z3 | z z3 | z z3 | z z3 || G/ G G G G/- |$ G/ E E3/2 E | D/ D D F3/2 | %27
+ G/ D3/2 E z | G/ G G G G/- | G/ E E3/2 E |$ D/ D D F3/2 | G/ D3/2 E z || z4 | G/ G G G3/2 | z4 |$ %35
+ B/ A B B A/- | A4 | z3/2 G2- G/ | D2 z2 |$ z2 z2 | z2 z2 | z2 z2 | z2 z2 | z2 z2 |$ z2 z2 | %45
+ z2 z2 | z2 z2 | z2 z2 || G/ G G G G/- |$ G/ E E3/2 E | D/ D D F3/2 | G/ D3/2 E z | G/ G G G G/- | %53
+ G/ E E3/2 E |$ D/ D D F3/2 | G/ D3/2 E z || z z3 | z z3 | z z3 |$ z z3 | z z3 | z z3 | z z3 | %63
+ z z3 |$ z z3 | z z3 | z z3 |$ z z3 | z z3 | z z3 | z z3 |$ z z3 | z z3 | z z3 | z z3 | z z3 |$ %76
+ z z3 | z z3 | z z3 | z z3 || G/ G G G G/- |$ G/ E3/2 E E | D/ D D F3/2 | G/ D3/2 E z | %84
+ G/ G G G G/- | G/ E3/2 E E |$ D/ D D F3/2 | G/ D3/2 E z | z z3 | z z3 | z z3 |$ z z3 | z z3 | %93
+ z z3 | z z3 | z z3 ||$ G/ G G G G/- | G/ E E3/2 E | D3/2 D F3/2 | G/ D3/2 E z | G/ G G G G/- |$ %101
+ G/ E3/2 E E | D/ D D F3/2 | G/ D3/2 E z || z z3 | z z3 |$ z z3 | z z3 | z z3 | z z3 | z z3 |$ %111
+ z z3 |] %112
+V:2
+ [E,-A,]/[E,B,]/- [E,B,]2 [E,-A,]/[E,B,]/- [E,B,]2 [E,-A,]/[E,B,]/-[E,B,] | (A,B,)(DE) (A,B,)DB, | %2
+ [E,-A,]/[E,B,]/- [E,B,]2 [E,-A,]/[E,B,]/- [E,B,]2 [E,-A,]/[E,B,]/-[E,B,] |$ (A,B,)(DE) (A,B,)DB, | %4
+ [E,-A,]/[E,B,]/- [E,B,]2 [E,-A,]/[E,B,]/- [E,B,]2 [E,-A,]/[E,B,]/-[E,B,] | (A,B,)(DE) (A,B,)DB, |$ %6
+ [E,-A,]/[E,B,]/- [E,B,]2 [E,-A,]/[E,B,]/- [E,B,]2 [E,-A,]/[E,B,]/-[E,B,] | (A,B,)(DE) (A,B,)DB, || %8
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %9
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %10
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,]3 [E,B,]2 [DGB]2 | %12
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %13
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %14
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] |$ [G,DG] [D,A,]3 [E,B,]2 E,,E,, | %16
+ [E,B,]4- [E,B,]2 [E,B,][C,G,] | [C,G,]4 [D,A,]4 | %18
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %19
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,]E,, |$ [E,B,]4- [E,B,]2 [E,B,][C,G,] | %21
+ [C,G,]4 [D,A,]4 | [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %23
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] || %24
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %25
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %26
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [A,D]3 [E,B,]2 [DGBe]2 | %28
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %29
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %30
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,]3 [E,B,]2 E,E, || [E,B,]8- | %33
+ [E,B,]6 [E,,A,,]2 | [D,A,]8- |$ [D,A,]8 | [E,B,]8- | [E,B,]8 | [D,A,]8- |$ [D,A,]8 | %40
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %41
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,] [E,B,][E,B,]/[E,B,]/ | %42
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [A,D]3 [E,B,]2 [DGB]2 |$ %44
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %45
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,] [E,B,][E,B,]/[E,B,]/ | %46
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,D,A,F]3 [E,B,E]2 [D-GB-]>[D^GB] || %48
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %49
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %50
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,D,A,F]3 [E,B,]2 [DGBe]2 | %52
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %53
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %54
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,]3 [E,B,]2 [DG]2 || %56
+ E-E/D/- DE- E4- | E2 ED (ED) B,<A, | (G,A,)(G,A,) (D,E,) E,2 |$ G, E,3 E,4 | (G,A,)A,B, (DE) E2 | %61
+ DEGA A-AGA- | A>G A2 GE E2 | (DE)EE ABed |$ d2- dd- d2 dB | g2 g2 g/-g/e (g/e/)d | %66
+ (g/e/)d (d/B/)A Be (d/B/)A |$ (A/G/)E GA- A G3 | A2 (G/A/G/)E/ GE (E/D/)B, | %69
+ D2 A,G, (A,/G,/)E,!mf!{/G,} A,B, | D2 (DE) GE D2 |$ E D3 E2 z2 | %72
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %73
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %74
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | %75
+ [G,DG] [D,D,A,F]3 [E,B,E]2 [A,-D-GB-]>[A,D^GB] |$ %76
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %77
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %78
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,D]3 [E,B,E]2 [A,-D-G]>[A,D^G] || %80
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %81
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %82
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,]3 [E,B,]2 [DGB]2 | %84
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %85
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %86
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,]3 [E,B,]2 E,,E,, | %88
+ [E,B,]4- [E,B,]2 [E,B,][C,G,] | [C,G,]4 [D,A,]4 | [E,B,]4- [E,B,]2- [E,B,][E,B,] |$ %91
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,]E,, | [E,B,]4- [E,B,]2 [E,B,][C,G,] | [C,G,]4 [D,A,]4 | %94
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %95
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] ||$ %96
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %97
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %98
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,]3 [E,B,]2 [DGBe]2 | %100
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %101
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %102
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,]3 [E,B,]2 E,E, || %104
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %105
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] |$ %106
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] | [G,DG] [D,A,]3 [E,B,]2 [DGB]2 | %108
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %109
+ [E,B,][E,B,][E,B,][E,B,] [E,B,][E,B,][E,B,][E,B,] | %110
+ [D,A,][D,A,][D,A,][D,A,] [D,A,][D,A,][D,A,][D,A,] |$ [G,DG] [D,A,]3 [E,B,]2 z2 |] %112
+V:3
+ z2 z6 | z2 z6 | z2 z6 |$ z6 B,,,2 | E,,3 E,,3 E,,2 | A,,B,,D,E, A,,B,,D,E, |$ E,,3 E,,3 E,,2 | %7
+ A,,B,,D,E, A,,B,,D,E, || E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, |$ %10
+ D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, | E,,E,,E,,E,, E,,E,,E,,E,, | %13
+ E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, |$ G,, D,,3 E,,2 A,,G,, | %16
+ E,,E,,E,,E,, E,,E,, E,,2 | C,,G,, C,2 D,,A,, D,2 | E,,E,,E,,E,, E,,E,,E,,E,, | %19
+ E,,E,,E,,E,, E,,E,,E,,E,, |$ E,,E,,E,,E,, E,,E,, E,,2 | C,,G,, C,2 D,,A,, D,2 | %22
+ E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, || E,,E,,E,,E,, E,,E,,E,,E,, |$ %25
+ E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, | %28
+ E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, A,,B,,D,E, |$ D,,D,,D,,D,, D,,D,,D,,D,, | %31
+ G,, D,,3 E,,2 A,,G,, || E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, | %34
+ D,,D,D,,D, D,,D,D,,D, |$ D,,D,D,,D, D,,D,D,,D, | E,,E,E,,E, E,,E,E,,E, | E,,E,E,,E, E,,E,E,,E, | %38
+ D,,D,D,,D, D,,D,D,,D, |$ D,,D,D,,D, D,,D,D,,D, | E,,E,,E,,E,, E,,E,,E,,E,, | %41
+ E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, |$ %44
+ E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, | %47
+ G,, D,,3 E,,2 A,,G,, || E,,E,,E,,E,, E,,E,,E,,E,, |$ E,,E,,E,,E,, A,,B,,D,E, | %50
+ D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, | E,,E,,E,,E,, E,,E,,E,,E,, | %53
+ E,,E,,E,,E,, A,,B,,D,E, |$ D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, || %56
+ E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, |$ %59
+ G,, D,,3 E,,2 D,,B,,, | E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, | %62
+ D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, |$ E,,E,,E,,E,, E,,E,,E,,E,, | %65
+ E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, |$ G,, D,,3 E,,2 D,,B,,, | %68
+ E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, |$ %71
+ G,, D,,3 E,,2 D,,B,,, | E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, A,,B,,D,E, | %74
+ D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, |$ E,,E,,E,,E,, E,,E,,E,,E,, | %77
+ E,,E,,E,,E,, A,,B,,D,E, | D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, || %80
+ E,,E,,E,,E,, E,,E,,E,,E,, |$ E,,E,,E,,E,, E,,E,,E,,E,, | D,,D,,D,,D,, D,,D,,D,,D,, | %83
+ G,, D,,3 E,,2 D,,B,,, | E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, |$ %86
+ D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 A,,G,, | E,,E,,E,,E,, E,,E,, E,,2 | %89
+ C,,G,, C,2 D,,A,, D,2 | E,,E,,E,,E,, E,,E,,E,,E,, |$ E,,E,,E,,E,, E,,E,,E,,E,, | %92
+ E,,E,,E,,E,, E,,E,, E,,2 | C,,G,, C,2 D,,A,, D,2 | E,,E,,E,,E,, E,,E,,E,,E,, | %95
+ E,,E,,E,,E,, E,,E,,E,,E,, ||$ E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, A,,B,,D,E, | %98
+ D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, | E,,E,,E,,E,, E,,E,,E,,E,, |$ %101
+ E,,E,,E,,E,, A,,B,,D,E, | D,,D,,D,,D,, D,,D,,D,,D,, | G,, D,,3 E,,2 D,,B,,, || %104
+ E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, E,,E,,E,,E,, |$ D,,D,,D,,D,, D,,D,,D,,D,, | %107
+ G,, D,,3 E,,2 D,,B,,, | E,,E,,E,,E,, E,,E,,E,,E,, | E,,E,,E,,E,, A,,B,,D,E, | %110
+ D,,D,,D,,D,, D,,D,,D,,D,, |$ G,, D,,3 E,,3 z |] %112
+V:4
+ z z3 | z z3 | z z3 |$ z3 !>!!>!e |!fff! [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ %6
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee]/e/4!mf!e/4 e ||!fff! [ee] [ee] [ee] [ee] | %9
+ [ee] [ee] [ee] [ee] |$ [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee] !>!!>!e | [ee] [ee] [ee] [ee] | %13
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ [ee]/[ee]/ z [ee] !>!!>!e | [ee] [ee] [ee] [ee] | %17
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee]/e/4!mf!e/4 e |$ %20
+!fff! [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | %23
+ [ee] [ee] [ee]/e/4!mf!e/4 e ||!fff! [ee] [ee] [ee] [ee] |$ [ee] [ee] [ee] [ee] | %26
+ [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee] !>!!>!e | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ %30
+ [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee] e || [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | %34
+ [ee] [ee] [ee] [ee] |$ [ee] [ee] [ee]/>e/ [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee]/>e/ [ee] | %38
+ [ee] [ee] [ee] [ee] |$ [ee]/!mp!e/4!p!e/4!mf! e/4!mp!e/4!mf!e/4!mp!e/4 [ee]/4!mf!e/4e/4e/4!ff! e | %40
+!fff! [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee] e |$ %44
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee] e || %48
+ [ee] [ee] [ee] [ee] |$ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee] e | %52
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee] !>!!>!e || %56
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ [ee]/[ee]/ z [ee] !>!!>!e | %60
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee]!mf!{/e} e |$ %64
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ [ee]/[ee]/ z [ee]!mf!{/e} e | %68
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ [ee]/[ee]/ z [ee]!mf!{/e} e | %72
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [eee] [ee] | [ee]/[ee]/ z [ee]!mf!{/e} e |$ %76
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee]!mf!{/e} e || %80
+ [ee] [ee] [ee] [ee] |$ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee]!mf!{/e} e | %84
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee]!mf!{/e} e | %88
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee]/e/4!mf!e/4 e |!fff! [ee] [ee] [ee] [ee] |$ %91
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee]/e/4!mf!e/4 e |!fff! [ee] [ee] [ee] [ee] | %94
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee]/e/4!mf!e/4 e ||$!fff! [ee] [ee] [ee] [ee] | %97
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee]!mf!{/e} e | [ee] [ee] [ee] [ee] |$ %101
+ [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee]!mf!{/e} e || [ee] [ee] [ee] [ee] | %105
+ [ee] [ee] [ee] [ee] |$ [ee] [ee] [ee] [ee] | [ee]/[ee]/ z [ee]!mf!{/e} e | %108
+!ff! !>![ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] | [ee] [ee] [ee] [ee] |$ %111
+ !>![ee]/!>![ee]/ z !>!!>![ee] z |] %112
+
