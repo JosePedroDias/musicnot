@@ -154,7 +154,16 @@ window.renderSong = function(o, chosenPartIdx) {
                     .attr('stroke-linecap', 'round');
     };
 
+
+
+    var LOG = false;
+    var _log = [];
+    var log = function(s) { _log.push(s); };
+
+
+
     var drawTouch = function(note, y, hand) {
+        if (LOG) { log(note); }
         var x = noteToXLookup[note];
         //if (!isFinite(x)) { throw 'drawTouch error: ' + note; }
         return s   .circle(x, y, WHITE_GAP*0.35)
@@ -174,8 +183,10 @@ window.renderSong = function(o, chosenPartIdx) {
 
     var bgGroup = s.group().addClass('bg');
     var fgGroup = s.group().addClass('fg');
-    chosenPart.forEach(function(m) { // each measure
+    chosenPart.forEach(function(m, mi) { // each measure
+        if (LOG) { log('\nm #' + mi); }
         m.voices.forEach(function(v, vi) { // each voice
+            if (LOG) { log('\nv #' + vi + '\n'); }
             //if (vi > 1) { debugger; throw 'too many voices'; }
             if (vi > 1) { vi = 1; } // TODO CRITERIA FOR CHOOSING HANDS!
             v.forEach(function(o) { // each voice item
@@ -186,17 +197,23 @@ window.renderSong = function(o, chosenPartIdx) {
                 //console.log(vi, o);
                 if (o instanceof Array) {
                     fgGroup.add( drawBridge(o[0].note, o[o.length-1].note, y0, vi) );
+                    if (LOG) { log('['); }
                     o.forEach(function(O) {
                         //console.log(O.note);
                         //if (!('note' in O)) { debugger; }
                         fgGroup.add( drawStroke(O.note, y0, y1, vi) );
                         fgGroup.add( drawTouch(O.note, y0, vi) );
                     });
+                    if (LOG) { log(']' + o[0].dur); }
                 }
                 else if ('note' in o) {
                     //console.log(o.note);
                     fgGroup.add( drawStroke(o.note, y0, y1, vi) );
                     fgGroup.add( drawTouch(o.note, y0, vi) );
+                    if (LOG) { log(o.dur); }
+                }
+                else {
+                    if (LOG) { log('x ' + o.dur); }
                 }
                 y[vi] += dy + WHITE_GAP;
             });
@@ -205,6 +222,10 @@ window.renderSong = function(o, chosenPartIdx) {
         setAllElements(y, newY);
         fgGroup.add( drawMeasureLine(newY) );
     });
+
+    if (LOG) {
+        console.log( _log.join(' ') );
+    }
 
     var H = y[0] - WHITE_GAP/2;
 
