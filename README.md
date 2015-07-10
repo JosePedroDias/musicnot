@@ -98,3 +98,8 @@ voices in the same measure use the same instrument, are implicitly in the same p
 - [ ] smart criteria for clustering notes between left/right hand
 - [ ] support for multiple voices playback
 - [ ] test webMIDI playback instead of WebAudio
+- [ ] experiment with the ABC format
+    - [spec](http://abcnotation.com/blog/2010/01/31/how-to-understand-abc-the-basics/)
+    - [player](http://davidbau.com/archives/2014/05/23/musicaljs.html)
+    - [converter](http://www.mandolintab.net/abcconverter.php)
+    

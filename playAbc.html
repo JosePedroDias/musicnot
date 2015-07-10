@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1">
+
+        <title>musicnot - play abc</title>
+    </head>
+
+    <body>
+    <script src="vendor/musical.min.js"></script>
+
+        <script>
+            var inst = new Instrument('piano'); // ;cutfollow:0;sustain:0.005;xdetune:1.001');
+
+            var song =
+                "X:2\n" +
+                "T:8th Sonata for piano\n" +
+                "%%staves {1 2}\n" +
+                "C:L. van Beethoven\n" +
+                "M:C\n" +
+                "L:1/16\n" +
+                "Q:1/8=66\n" +
+                "F:http://richardrobinson.tunebook.org.uk/tune/6525\n" +
+                "K:Cm\n" +
+                "% .. even when there are a lot of notes\n" +
+                "V:1\n" +
+                "!fp![E,4G,4C4]- [E,3/G,3/C3/]!3![G,/C/]!4![G,3/=B,3/D3/]!5![G,/C/E/] ([=A,4C4E4]!4![=B,2D2])z2|\n" +
+                "!fp!!3![=B,4D4F4]- [B,3/D3/F3/][B,/D/F/][B,3/D3/G3/][B,/D/A/] ([B,4D4A4]!3![C2E2G2])z2|\n" +
+                "V:2\n" +
+                "[C,,4E,,4G,,4C,4]- [C,,3/E,,3/G,,3/C,3/]!2!E,/!3!D,3/!4!C,/ (!2!^F,4G,2)z _A,,|\n" +
+                "_A,4-A,3/!2!A,/!1!G,3/=F,/ E,4-E,2z2|";
+
+            inst.play(
+                song,
+                function() {
+                    console.log('done');
+                }
+            );
+
+            var pressed = {};
+
+            inst.on('noteon', function(e) {
+                pressed[e.midi] = true;
+                drawMidiNumbers();
+            });
+
+            inst.on('noteoff', function(e) {
+                delete pressed[e.midi];
+                drawMidiNumbers();
+            });
+
+            function drawMidiNumbers() {
+                var k = [];
+                for (var midi in pressed) { k.push(midi); }
+                console.log('(midi #' + k.join(',') +')');
+            }
+        </script>
+    </body>
+</html>

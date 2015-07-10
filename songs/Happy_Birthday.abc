@@ -1,0 +1,16 @@
+X:1
+T:Happy Birthday
+%%score { 1 | 2 }
+L:1/4
+M:6/8
+I:linebreak $
+K:Cmaj
+V:1 treble
+%%MIDI program 0
+V:2 bass
+%%MIDI program 0
+V:1
+ z2 G/G/ | A G c | B2 G/G/ | A G d | c2 G/G/ |$ g e c | B A f/f/ | e c d | c2 z |] %9
+V:2
+ z3 | C,3 | G,3 | G,3 | C,3 |$ C,3 | F,3 | G,3 | C,3 |] %9
+

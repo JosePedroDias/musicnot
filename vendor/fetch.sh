@@ -14,3 +14,7 @@
 
 #chai
 #wget https://raw.githubusercontent.com/chaijs/chai/master/chai.js
+
+#musical.js
+wget https://raw.githubusercontent.com/PencilCode/musical.js/master/musical.js
+wget https://raw.githubusercontent.com/PencilCode/musical.js/master/musical.min.js

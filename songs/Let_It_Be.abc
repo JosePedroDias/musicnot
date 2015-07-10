@@ -1,0 +1,46 @@
+X:1
+T:Let it Be
+T:John Lenon and Paul MacCartney
+T:Piano
+%%score { ( 1 2 ) | 3 }
+L:1/8
+Q:1/4=60
+M:4/4
+I:linebreak $
+K:Gmaj
+V:1 treble nm="Piano" snm="Pno."
+%%MIDI program 0
+V:2 treble
+%%MIDI program 0
+L:1/4
+V:3 bass
+%%MIDI program 0
+V:1
+"^   " [G,B,DG]2 [G,B,DG]2 [F,A,D]2 [F,A,D]2 | E2 E2 E2 E2 | [G,B,D]2 [G,B,D]2 [F,A,D]2 [F,A,D]2 |$ %3
+ [CE]2 [B,D][A,C] [G,B,D]2 z D/D/ |: DD/E/- EB, DD G<A |$ B/BB/- BA AG G2 | B<B cB/B/- BA z B/A/ |$ %7
+ AG G4 z3/2 D/ | D<D DG/D/- DD G<A |$ A<B BA/A/- A/GG/- G2 | B<B cB/B/- BA z B/A/ |1$ %11
+ A<G- G4 B/AG/- | G2 B/de/- ed d/dB/- | B/A/G E/DB/- B G3 |$ B/Bc/- cB/B/- BA z/ B/A/A/- | %15
+ AG- G4 z B,/D/ :|2 A<G- G4 B/AG/- ||$ G2 B/de/- ed d/dB/- | B/A/G E/DB/- B G3 | %19
+ B/Bc/- cB/B/- BA z/ B/A/A/- |$ AG- G4 B/AG/ | G2 B/de/- ed d/dB/- | B/A/G E/DB/- B G3 |$ %23
+ B/Bc/- cB/B/- BA z/ B/A/A/- | AG- G4 !fermata![D,G,B,]2 |] %25
+V:2
+ x4 | [G,B,] [G,B,]/D/ [G,C]/B,/ [A,C] | z4 |$ x4 |: [G,B,] G,/[D,G,]/ [F,A,] [A,D] |$ %5
+ [B,EG] [EG]/[DF]/ [B,E] [A,CE]/[A,CE]/ | [B,DG] [DG] [DF] [DF] |$ %7
+ [CE] [G,D]/[G,C]/ [G,B,D] [G,B,D]/ z/ | [G,B,] [G,B,] [F,A,] [A,D] |$ %9
+ [B,EG] [B,E] [CE] [G,CE]/[G,CE]/ | [B,DG] [DG] [DF] [DF]/[DF]/ |1$ %11
+ [CE] [G,D]/[G,C]/ [G,B,D] [B,D]/[A,D]/ | [B,E] [EG] [FA] [DFA] | [CE] [G,C]/ z/ [B,D] [B,D] |$ %14
+ [DG] [DG] [DF] [DF] | [CE] [G,D]/[G,D]/ [G,B,] [D,G,B,]/ z/ :|2 %16
+ [CE] [G,D]/[G,C]/ [G,B,D] [B,D]/[A,D]/ ||$ [B,E] [EG] [FA] [DFA] | [CE] [G,C]/ z/ [B,D] [B,D] | %19
+ [DG] [DG] [DF] [DF] |$ [CE] [G,D]/[G,D]/ [G,B,] [D,G,B,]/ x/ | [B,E] [EG] [FA] [DFA] | %22
+ [CE] [G,C]/ z/ [B,D] [B,D] |$ [DG] [DG] [DF] [DF] | [CE] [G,D]/[G,D]/ [G,B,] x |] %25
+V:3
+ G,,G,,,G,,G,,, D,D,,D,D,, | E,E,,E,E,, C,C,,C,C,, | D,D,,D,D,, D,D,,D,D,, |$ %3
+ C,C,, D,,2 G,,G,,,G,,G,,, |: G,,G,,,G,,G,,, D,D,,D,D,, |$ E,E,,E,D, C,C,, C,,2 | %6
+ G,,G,,,G,,G,,, D,,2 D,,2 |$ C,2 B,,A,, G,,G,,,G,,G,,, | G,,G,,,G,,G,,, D,D,,D,D,, |$ %9
+ E,E,,E,D, C,C,, C,,2 | G,,G,,,G,,G,,, D,,2 D,,2 |1$ C,2 B,,A,, G,,G,,G,,F,, | %12
+ E,,E,,E,,E,, D,,D,,D,,D,, | C,,C,,C,,C,, G,,G,,G,,G,, |$ G,,G,,G,,G,, D,,D,,D,,D,, | %15
+ C,,C,B,,A,, G,,G,,G,,G,, :|2 C,2 B,,A,, G,,G,,G,,F,, ||$ E,,E,,E,,E,, D,,D,,D,,D,, | %18
+ C,,C,,C,,C,, G,,G,,G,,G,, | G,,G,,G,,G,, D,,D,,D,,D,, |$ C,,C,B,,A,, G,,G,,G,, z | %21
+ E,,E,,E,,E,, D,,D,,D,,D,, | C,,C,,C,,C,, G,,G,,G,,G,, |$ G,,G,,G,,G,, D,,D,,D,,D,, | %24
+ C,,C,B,,A,, G,,G,, !fermata!G,,2 |] %25
+
