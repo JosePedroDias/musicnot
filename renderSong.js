@@ -163,7 +163,6 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
     var drawTouch = function(note, y, hand) {
-        if (LOG) { log(note); }
         var x = noteToXLookup[note];
         //if (!isFinite(x)) { throw 'drawTouch error: ' + note; }
         return s   .circle(x, y, WHITE_GAP*0.35)
@@ -179,6 +178,54 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
 
+    var simplifyMeasure = function(m, ignoreEmptyMeasures, reduceDurations) {
+        var hasFoundNotes = false;
+        var M = {voices:[]};
+        m.voices.forEach(function(v) { // each voice
+            var bag = [];
+
+            v.forEach(function(o) { // each voice item
+                var dur = (o instanceof Array ? o[0].dur : o.dur);
+                if (o instanceof Array) { // chord
+                    hasFoundNotes = true;
+                    var chord = new Array(o.length);
+                    o.forEach(function(O, ci) {
+                        chord[ci] = {note: O.note, dur:dur};
+                    });
+                    bag.push(chord);
+                }
+                else if ('note' in o) { // note
+                    hasFoundNotes = true;
+                    bag.push({note: o.note, dur:dur});
+                }
+                else { // rest
+                    bag.push({dur:dur});
+                }
+            });
+
+            if (reduceDurations) { // TODO split bag
+
+            }
+
+            M.voices.push(bag);
+        });
+        if (!hasFoundNotes) { return false; }
+        return M;
+    };
+
+
+
+    var chosenPart2 = [];
+    chosenPart.forEach(function(m) {
+        var m2 = simplifyMeasure(m, true, false);
+        if (m2) {
+            chosenPart2.push(m2);
+        }
+    });
+    chosenPart = chosenPart2;
+
+
+
     var y = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // TODO: max num of voices should be detected apriori
 
     var bgGroup = s.group().addClass('bg');
@@ -187,34 +234,36 @@ window.renderSong = function(o, chosenPartIdx) {
         if (LOG) { log('\nm #' + mi); }
         m.voices.forEach(function(v, vi) { // each voice
             if (LOG) { log('\nv #' + vi + '\n'); }
-            //if (vi > 1) { debugger; throw 'too many voices'; }
-            if (vi > 1) { vi = 1; } // TODO CRITERIA FOR CHOOSING HANDS!
+
+            var vii = Math.max(vi, 1); // TODO CRITERIA FOR CHOOSING HANDS!
+
             v.forEach(function(o) { // each voice item
                 var y0 = y[vi];
-                var dy = ( (o instanceof Array ? o[0].dur : o.dur) - 1) * WHITE_GAP;
+                //if (!isFinite(y0)) { throw ''}
+
+                var isChord = (o instanceof Array);
+                var dy = ( (isChord ? o[0].dur : o.dur) - 1) * WHITE_GAP;
                 var y1 = y0 + dy;
-                if (!isFinite(y0)) { throw ''}
-                //console.log(vi, o);
-                if (o instanceof Array) {
-                    fgGroup.add( drawBridge(o[0].note, o[o.length-1].note, y0, vi) );
+
+                if (isChord) {
+                    fgGroup.add( drawBridge(o[0].note, o[o.length-1].note, y0, vii) );
                     if (LOG) { log('['); }
                     o.forEach(function(O) {
-                        //console.log(O.note);
-                        //if (!('note' in O)) { debugger; }
-                        fgGroup.add( drawStroke(O.note, y0, y1, vi) );
-                        fgGroup.add( drawTouch(O.note, y0, vi) );
+                        fgGroup.add( drawStroke(O.note, y0, y1, vii) );
+                        fgGroup.add( drawTouch(O.note, y0, vii) );
+                        if (LOG) { log(O.note + ' ' + O.dur); }
                     });
                     if (LOG) { log(']' + o[0].dur); }
                 }
-                else if ('note' in o) {
-                    //console.log(o.note);
-                    fgGroup.add( drawStroke(o.note, y0, y1, vi) );
-                    fgGroup.add( drawTouch(o.note, y0, vi) );
-                    if (LOG) { log(o.dur); }
+                else if ('note' in o) { // note
+                    fgGroup.add( drawStroke(o.note, y0, y1, vii) );
+                    fgGroup.add( drawTouch(o.note, y0, vii) );
+                    if (LOG) { log(o.note + ' ' + o.dur); }
                 }
-                else {
-                    if (LOG) { log('x ' + o.dur); }
+                else { // rest
+                    if (LOG) { log('z ' + o.dur); }
                 }
+
                 y[vi] += dy + WHITE_GAP;
             });
         });
