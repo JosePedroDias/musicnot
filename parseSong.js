@@ -95,8 +95,15 @@ window.parseSong = function(doc) {
 
             var noteEls = getEls(measureEl, 'note');
             noteEls.forEach(function(noteEl) {
+                var dur = getNum(noteEl, 'duration');
+
+                if (!isFinite(dur)) {
+                    console.warn('ignoring note', noteEl);
+                    return;
+                }
+
                 var n = {
-                    dur: getNum(noteEl, 'duration')
+                    dur: dur
                 };
 
                 var acci, isChord = false;

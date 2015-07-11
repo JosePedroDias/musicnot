@@ -158,6 +158,7 @@ window.renderSong = function(o, chosenPartIdx) {
     var LOG = false;
     var _log = [];
     var log = function(s) { _log.push(s); };
+    //var log = function(s) { console.log(s); };
 
 
 
@@ -225,7 +226,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
 
-    var y = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // TODO: max num of voices should be detected apriori
+    var y = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // TODO: max num of voices should be detected apriori
 
     var bgGroup = s.group().addClass('bg');
     var fgGroup = s.group().addClass('fg');
@@ -238,7 +239,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
             v.forEach(function(o) { // each voice item
                 var y0 = y[vi];
-                //if (!isFinite(y0)) { throw ''}
+                //if (!isFinite(y0)) { throw ''; }
 
                 var isChord = (o instanceof Array);
                 var dy = ( (isChord ? o[0].dur : o.dur) - 1) * WHITE_GAP;
