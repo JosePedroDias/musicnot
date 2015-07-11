@@ -17,7 +17,8 @@ window.parseSong = function(doc) {
 
     var getText = function(el, sel) {
         try {
-            return el.querySelector(sel).textContent;
+            var el2 = el.querySelector(sel);
+            return (el2 ? el2.textContent : '');
         } catch(ex) {}
     };
 
@@ -35,6 +36,19 @@ window.parseSong = function(doc) {
         var v = getTextAttr(el, attrName);
         if (!isFinite(v)) { return; }
         return parseFloat(v);
+    };
+
+    var alterToAcci = function(alter) {
+        var acci = '';
+        if (isFinite(alter)) {
+            alter = parseInt(alter, 10);
+            if      (alter ===  1) { acci = '#';  }
+            else if (alter ===  2) { acci = '##'; }
+            else if (alter === -1) { acci = 'b';  }
+            else if (alter === -2) { acci = 'bb'; }
+            else {                   acci = '';   }
+        }
+        return acci;
     };
 
 
@@ -85,20 +99,11 @@ window.parseSong = function(doc) {
                     dur: getNum(noteEl, 'duration')
                 };
 
-                var isChord = false;
+                var acci, isChord = false;
 
                 var pitchEl = getEl(noteEl, 'pitch');
                 if (pitchEl) {
-                    var acci, alter = getText(pitchEl, 'alter');
-                    if (isFinite(alter)) {
-                        alter = parseInt(alter, 10);
-                        if      (alter ===  1) { acci = '#';  }
-                        else if (alter ===  2) { acci = '##'; }
-                        else if (alter === -1) { acci = 'b';  }
-                        else if (alter === -2) { acci = 'bb'; }
-                        else {                   acci = '';   }
-                    }
-
+                    acci = alterToAcci( getText(pitchEl, 'alter') );
                     isChord = !!getEl(noteEl, 'chord');
 
                     n.note = [
@@ -107,16 +112,19 @@ window.parseSong = function(doc) {
                         getText(pitchEl, 'octave')
                     ].join('');
                 }
-                /*else {
+                else {
                     var unpitchedEl = getEl(noteEl, 'unpitched');
                     if (unpitchedEl) {
+                        acci = alterToAcci( getText(unpitchedEl, 'alter') );
+                        isChord = !!getEl(noteEl, 'chord');
+
                         n.note = [
                             getText(unpitchedEl, 'display-step'),
-                            '', // TODO: has accidentals?
+                            acci, // TODO may be irrelevant
                             getText(unpitchedEl, 'display-octave')
                         ].join('');
                     }
-                }*/
+                }
 
                 var voice = getNum(noteEl, 'voice');
 

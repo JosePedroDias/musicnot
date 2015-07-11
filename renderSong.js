@@ -4,7 +4,6 @@ window.renderSong = function(o, chosenPartIdx) {
 
     var chosenPart = o.parts[chosenPartIdx || 0];
 
-
     //console.log(o);
 
     /*console.log('\n\n');
