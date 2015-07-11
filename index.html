@@ -82,8 +82,7 @@
                         }
                     }
 
-                    //playSong(song, partIdx);
-                    renderSong(song, partIdx);
+                    renderSong(song, partIdx, false); // TODO 3rd param is disregardDurations
 
                     // loading done
                     document.querySelector('#print').style.display = 'block';

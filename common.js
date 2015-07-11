@@ -35,7 +35,7 @@
         return arr;
     };
 
-    w.setAllElements = function(arr, v) {
+    w.setAllElements = function(arr, v) { // affects arr
         for (var i = 0, l = arr.length; i < l; ++i) {
             arr[i] = v;
         }
@@ -45,6 +45,10 @@
         return arr.map(function(num) {
             return num + diff;
         });
+    };
+
+    w.pushArr = function(arr, arr2) {
+        return arr.concat(arr2);
     };
 
 

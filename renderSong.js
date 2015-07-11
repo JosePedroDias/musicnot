@@ -1,4 +1,4 @@
-window.renderSong = function(o, chosenPartIdx) {
+window.renderSong = function(o, chosenPartIdx, disregardDurations) {
     'use strict';
 
 
@@ -206,48 +206,93 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
 
-    var genEmptyArray = function() { return []; };
-
-    var simplifyMeasure = function(m) { // TODO
-        var M = {voices:[]};
-        var y = arrayOf(maxNrVoices, genEmptyArray);
-        m.voices.forEach(function(v) { // each voice
+    var simplifyMeasure = function(m) {
+        var M = [];
+        m.voices.forEach(function(v, vi) { // each voice
             var bag = [];
-
-            v.forEach(function(o) { // each voice item
-                var isChord = (o instanceof Array);
+            v.forEach(function(o, oi) { // each voice item
+                var isChord = o instanceof Array;
                 var dur = (isChord ? o[0].dur : o.dur);
-                if (isChord) { // chord
-                    var chord = new Array(o.length);
-                    o.forEach(function(O, ci) {
-                        chord[ci] = {note: O.note, dur:dur};
-                    });
-                    bag.push(chord);
+                var info = undefined;
+                if (isChord) {
+                    info = o.map(function(el) { return el.note; });
                 }
-                else if ('note' in o) { // note
-                    bag.push({note: o.note, dur:dur});
+                else if ('note' in o) {
+                    info = o.note;
                 }
-                else { // rest
-                    bag.push({dur:dur});
-                }
+                bag = pushArr(bag, arrayOf(dur, [info, oi]) );
             });
-
-            M.voices.push(bag);
+            M.push(bag);
         });
-        return M;
+
+        // ditch repeated lines, discarding ois
+        var nrVoices = m.voices.length;
+        var MM = [];
+
+        // determines max nr of els in voice
+        var l = 0;
+        M.forEach(function(arr) {
+            var ll = arr.length;
+            if (ll > l) { l = ll; }
+        });
+
+        var i, row, line, prevLine = '';
+        for (i = 0; i < l; ++i) {
+            row = seq(nrVoices).map(function(vi) {
+                return M[vi][i];
+            });
+            line = JSON.stringify(row);
+
+            //var keep = (line !== prevLine);
+            var keep = (line !== '' && line !== prevLine);
+
+            //console.log(i, line, keep);
+            //if (keep) { console.log(line); }
+
+            if (keep) {
+                MM.push( row.map(function(pair) { return (pair ? pair[0] : undefined); }) );
+            }
+            prevLine = line;
+        }
+
+        // expand original structure for filtered lines, setting dur=1
+        var MMM = arrayOf(nrVoices, function() { return []; });
+
+        MM.forEach(function(row) {
+            row.forEach(function(o, vi) {
+                var O;
+                if (o instanceof Array) {
+                    O = o.map(function(note) {
+                        return {note:note, dur:1};
+                    });
+                }
+                else if (o === undefined) {
+                    O = {dur:1};
+                }
+                else {
+                    O = {note:o, dur:1};
+                }
+                MMM[vi].push(O);
+            });
+        });
+
+        return {voices:MMM};
     };
 
 
 
     var chosenPart2 = [];
-    chosenPart.forEach(function(m, mi) {
-        if (!measureHasNotes(m)) {
-            //console.log('ignored measure #%s', mi);
+    chosenPart.forEach(function(m) {
+        if (!measureHasNotes(m)) { return; }
+
+        //if (false) { // TODO
+        if (!disregardDurations) {
+            chosenPart2.push( m );
             return;
         }
 
-        chosenPart2.push( m );
-        //chosenPart2.push( simplifyMeasure(m) );
+        var m2 = simplifyMeasure(m);
+        chosenPart2.push(m2);
     });
     chosenPart = chosenPart2;
 
