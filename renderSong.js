@@ -178,16 +178,39 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
 
-    var simplifyMeasure = function(m, ignoreEmptyMeasures, reduceDurations) {
-        var hasFoundNotes = false;
+    var hasNote = function(o) {
+        return ('note' in o);
+    };
+
+    var measureHasNotes = function(m) {
+        return m.voices.some(function(v) { // each voice
+            return v.some(function(o) { // each voice item
+                if (o instanceof Array) { // chord
+                    if (o.some(hasNote)) {
+                        return true;
+                    }
+                }
+                else if (hasNote(o)) {
+                    return true;
+                }
+            });
+        });
+    };
+
+
+
+    var genEmptyArray = function() { return []; };
+
+    var simplifyMeasure = function(m) { // TODO
         var M = {voices:[]};
+        var y = arrayOf(16, genEmptyArray);
         m.voices.forEach(function(v) { // each voice
             var bag = [];
 
             v.forEach(function(o) { // each voice item
-                var dur = (o instanceof Array ? o[0].dur : o.dur);
-                if (o instanceof Array) { // chord
-                    hasFoundNotes = true;
+                var isChord = (o instanceof Array);
+                var dur = (isChord ? o[0].dur : o.dur);
+                if (isChord) { // chord
                     var chord = new Array(o.length);
                     o.forEach(function(O, ci) {
                         chord[ci] = {note: O.note, dur:dur};
@@ -195,7 +218,6 @@ window.renderSong = function(o, chosenPartIdx) {
                     bag.push(chord);
                 }
                 else if ('note' in o) { // note
-                    hasFoundNotes = true;
                     bag.push({note: o.note, dur:dur});
                 }
                 else { // rest
@@ -203,30 +225,28 @@ window.renderSong = function(o, chosenPartIdx) {
                 }
             });
 
-            if (reduceDurations) { // TODO split bag
-
-            }
-
             M.voices.push(bag);
         });
-        if (!hasFoundNotes) { return false; }
         return M;
     };
 
 
 
     var chosenPart2 = [];
-    chosenPart.forEach(function(m) {
-        var m2 = simplifyMeasure(m, true, false);
-        if (m2) {
-            chosenPart2.push(m2);
+    chosenPart.forEach(function(m, mi) {
+        if (!measureHasNotes(m)) {
+            //console.log('ignored measure #%s', mi);
+            return;
         }
+
+        chosenPart2.push( m );
+        //chosenPart2.push( simplifyMeasure(m) );
     });
     chosenPart = chosenPart2;
 
 
 
-    var y = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; // TODO: max num of voices should be detected apriori
+    var y = arrayOf(16, 1); // TODO: max num of voices should be detected apriori
 
     var bgGroup = s.group().addClass('bg');
     var fgGroup = s.group().addClass('fg');

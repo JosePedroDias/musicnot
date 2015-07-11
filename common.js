@@ -27,10 +27,10 @@
         return arr;
     };
 
-    w.times = function(n, v) {
+    w.arrayOf = function(n, v) {
         var arr = new Array(n);
         for (var i = 0; i < n; ++i) {
-            arr[i] = v;
+            arr[i] = (typeof v === 'function' ? v() : v);
         }
         return arr;
     };
