@@ -40,6 +40,7 @@ window.renderSong = function(o, chosenPartIdx) {
     // determine part notes
     var findNotes = function(part) {
         var foundNotes = {};
+        var maxNrVoices = 0;
 
         var visitNote = function(o) {
             foundNotes[o.note] = true;
@@ -47,6 +48,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
         part.forEach(function(measure) { // iterate measures
             measure.voices.forEach(function(voice) { // iterate voices
+                maxNrVoices = Math.max(maxNrVoices, voice.length); // update max nr of voices
                 voice.forEach(function (o) { // each item can be one note/rest or an array of chorus notes
                     if (o instanceof Array) {
                         o.forEach(visitNote);
@@ -69,9 +71,14 @@ window.renderSong = function(o, chosenPartIdx) {
             return (a < b ? -1 : (a > b ? 1 : 0));
         });
 
-        return notesInSong;
+        return {notesInSong:notesInSong, maxNrVoices:maxNrVoices};
     };
-    var notesInSong = findNotes(chosenPart);
+
+
+    var tmp = findNotes(chosenPart);
+    var notesInSong = tmp.notesInSong;
+    var maxNrVoices = tmp.maxNrVoices;
+
     //console.log('notesInSong', notesInSong);
     var minNote = notesInSong[0];
     var maxNote = notesInSong[notesInSong.length - 1];
@@ -203,7 +210,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
     var simplifyMeasure = function(m) { // TODO
         var M = {voices:[]};
-        var y = arrayOf(16, genEmptyArray);
+        var y = arrayOf(maxNrVoices, genEmptyArray);
         m.voices.forEach(function(v) { // each voice
             var bag = [];
 
@@ -246,7 +253,7 @@ window.renderSong = function(o, chosenPartIdx) {
 
 
 
-    var y = arrayOf(16, 1); // TODO: max num of voices should be detected apriori
+    var y = arrayOf(maxNrVoices, WHITE_GAP/2);
 
     var bgGroup = s.group().addClass('bg');
     var fgGroup = s.group().addClass('fg');
